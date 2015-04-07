@@ -5,6 +5,6 @@ public class Bibliotheque {
 
 	public  static void Bibliotheque(){
 	
-		System.out.println("Je pense que sa fonctionne !!!!!");
+		System.out.println("Je pense que sa fonctionne !!!");
 	}
 }
