@@ -6,8 +6,11 @@ import java.util.Date;
 public class EmpruntEnCours {
 
 	private Date dateEmprunt;
-	ArrayList enCours=new ArrayList();
 	private int nbEmpruntEnCours;
+	
+	ArrayList enCours=new ArrayList();
+	
+	
 	
 	public Date getDateEmprunt() {
 		return dateEmprunt;
@@ -26,7 +29,7 @@ public class EmpruntEnCours {
 		this.nbEmpruntEnCours = nbEmpruntEnCours;
 	}
 
-	public EmpruntEnCours(Date dateEmprunt,Exemplaire exemplaire) {
+	public EmpruntEnCours(Date dateEmprunt,Utilisateur utilisateur,Exemplaire exemplaire) {
 		
 	
 		
