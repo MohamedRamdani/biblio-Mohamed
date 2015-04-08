@@ -4,45 +4,56 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class EmpruntEnCours {
-
+	
 	private Date dateEmprunt;
-	private int nbEmpruntEnCours;
-	private Utilisateur utilisateur;
+	private Date dateRestitutionEff=null;
 	private Exemplaire exemplaire;
+	private Utilisateur utilisateur;
+	private EnumStatusExemplaire status;
+	ArrayList<Exemplaire> emp1=new ArrayList<Exemplaire>();
 	
-	ArrayList<EmpruntEnCours> enCours=new ArrayList<EmpruntEnCours>();
 	
-	
-	public EmpruntEnCours(Date dateEmprunt,Utilisateur utilisateur,Exemplaire exemplaire) {
-		
+
+	public EmpruntEnCours(Date dateEmprunt,Date dateRestitutionEff,Utilisateur utilisateur){
+
 		this.dateEmprunt=dateEmprunt;
+		this.dateRestitutionEff=dateRestitutionEff;
+		
 		this.utilisateur=utilisateur;
-		this.exemplaire=exemplaire;
-		enCours.add(this);
-			
+		
 	}
+	
+	
+	public void setEmp1(Exemplaire exemplaire) {
+		
+		exemplaire.setStatus(status.PRETE);
+		this.exemplaire=exemplaire;
+		
+		this.emp1.add(this.exemplaire);
+	}
+
 	public Date getDateEmprunt() {
 		return dateEmprunt;
+	}
+
+	public Date getDateRestitutionEff() {
+		return dateRestitutionEff;
 	}
 
 	
 	public void setDateEmprunt(Date dateEmprunt) {
 		this.dateEmprunt = dateEmprunt;
+		
 	}
 
-
-	public int getNbEmpruntEnCours() {
-		return nbEmpruntEnCours;
-	}
-
-	public void setNbEmpruntEnCours(int nbEmpruntEnCours) {
-		this.nbEmpruntEnCours = nbEmpruntEnCours;
-	}
+	public void setDateRestitutionEff(Date dateRestitutionEff) {
+			this.dateRestitutionEff = dateRestitutionEff;
+		}
 
 	@Override
 	public String toString() {
-		return "\nnbEmpruntEnCours:" + this.nbEmpruntEnCours + "\n"+ this.utilisateur + "\nexemplaire:" + this.exemplaire;
+		return  "\n" + utilisateur+"\n" +this.emp1 +"\ndate de l'emprunt:" + dateEmprunt
+				+ "\ndate de restitution effective:" + dateRestitutionEff;
 	}
 
-	
 }
