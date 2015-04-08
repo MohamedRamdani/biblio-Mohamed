@@ -1,21 +1,26 @@
 package test;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 import Dao.ExemplaireDao;
 import metier.EmpruntArchive;
+import metier.EmpruntEnCours;
+import metier.Utilisateur;
 
 public class TestEmpruntArchive {
 	
 	public static void main(String[]args){
 		
-		EmpruntArchive ea1=new EmpruntArchive();
-		//ea1.setDateEmprunt(07/08/2015);
+		Utilisateur util1=new Utilisateur(007,"permis de tuer","James BOND");
+		System.out.println("Creation du user :"+util1);
 		ExemplaireDao Dexemp=new ExemplaireDao();
 		
-		System.out.println("Emprunt en cours :"+ea1);
+		EmpruntArchive ea1=new EmpruntArchive((new GregorianCalendar(2015,Calendar.APRIL,27).getTime()),null,util1,Dexemp.findByKey(3));
 		
-		System.out.println("\n");
-		System.out.println("Voici le livre rechercher :"+Dexemp.findByKey(3));
+		System.out.println(ea1);
 		
+				
 	}
 
 }
