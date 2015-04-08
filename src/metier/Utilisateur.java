@@ -3,6 +3,9 @@ package metier;
 public class Utilisateur {
 	
 	
+	
+	
+	
 /******************************************Attributes*********************************************/
 	private int idUtilisateur;
 	private String pwd;
