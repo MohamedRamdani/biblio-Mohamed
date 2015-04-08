@@ -5,10 +5,10 @@ import java.util.Date;
 public class Exemplaire {
 	
 	
-private int idExemplaire;
-private Date dateAchat;
-private EnumStatusExemplaire status;
-private String isbn;
+	private int idExemplaire;
+	private Date dateAchat;
+	private EnumStatusExemplaire status;
+	private String isbn;
 
 	public Exemplaire(int idExemplaire,Date dateAchat,String isbn) {
 		
