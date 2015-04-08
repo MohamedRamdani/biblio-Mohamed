@@ -1,5 +1,7 @@
 package metier;
 
+
+
 public class Adherent {
 	
 /******************************************Attributes*********************************************/
@@ -12,16 +14,19 @@ public class Adherent {
 
 	
 	public boolean isConditionsPretAcceptees(){
-		return isConditionsPretAcceptees();
 		
+		if (nbMaxPrets<=3)
+			return true;
+		return false;
 	}
-	
-	public int getNbRetards(){
-		return 0;	
-	}
+		
+
 	
 	
 	
+	
+	
+
 	
 	
 	

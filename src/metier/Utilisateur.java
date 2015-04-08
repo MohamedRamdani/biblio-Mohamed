@@ -1,8 +1,6 @@
 package metier;
 
-import java.io.ObjectInputStream.GetField;
-
-public class Utilisateur{
+public class Utilisateur {
 	
 	
 /******************************************Attributes*********************************************/
@@ -38,8 +36,6 @@ public class Utilisateur{
 		this.pseudonyme = pseudonyme;
 	}
 	
-	
-	
 /***************************************************************************************************/
 	
 	@Override
@@ -49,7 +45,9 @@ public class Utilisateur{
 	
 /**************************************************************************************************/
 
-	
+/*	public int getNbEmpruntEnCours() {
+		return nbEmpruntEnCours;
+	}*/
 	
 	
 	
