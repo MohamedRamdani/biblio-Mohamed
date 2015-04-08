@@ -27,7 +27,7 @@ public class Utilisateur{
 	public String getPseudonyme() {
 		return pseudonyme;
 	}
-/*****************************************Mutateurs*************************************************/
+/*****************************************Mutators*************************************************/
 	public void setIdUtilisateur(int idUtilisateur) {
 		this.idUtilisateur = idUtilisateur;
 	}
@@ -38,10 +38,17 @@ public class Utilisateur{
 		this.pseudonyme = pseudonyme;
 	}
 	
+	
+	
+/***************************************************************************************************/
+	
+	@Override
+	public String toString() {
+		return "Utilisateur [idUtilisateur=" + idUtilisateur + "\tpwd=" + pwd + "\tpseudonyme=" + pseudonyme + "]";
+	}
+	
 /**************************************************************************************************/
 
-	
-	
 	
 	
 	
