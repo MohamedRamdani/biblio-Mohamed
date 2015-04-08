@@ -52,8 +52,8 @@ public class Exemplaire {
 
 	@Override
 	public String toString() {
-		return "Exemplaire N°" + idExemplaire + ", dateAchat:"
-				+ dateAchat  + ", isbn:" + isbn+ ", status:" + status;
+		return "Exemplaire N°" + idExemplaire + ", date d'achat:"
+				+ dateAchat  + ", ISBN:" + isbn+ ", status:" + status;
 	}
 
 	
