@@ -1,10 +1,9 @@
 package metier;
 
+
+import metier.EmpruntEnCours;
+
 public class Utilisateur {
-	
-	
-	
-	
 	
 /******************************************Attributes*********************************************/
 	private int idUtilisateur;
