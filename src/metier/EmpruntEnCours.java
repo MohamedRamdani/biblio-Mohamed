@@ -8,20 +8,18 @@ public class EmpruntEnCours {
 	private Date dateEmprunt;
 	private Date dateRestitutionEff=null;
 	private Exemplaire exemplaire;
-	private Utilisateur utilisateur;
 	private EnumStatusExemplaire status;
-	ArrayList<Exemplaire> emp1=new ArrayList<Exemplaire>();
+	
 	
 	
 
-	public EmpruntEnCours(Date dateEmprunt,Date dateRestitutionEff,Utilisateur utilisateur){
+	public EmpruntEnCours(Date dateEmprunt,Date dateRestitutionEff,Exemplaire exemplaire){
 
 		this.dateEmprunt=dateEmprunt;
 		this.dateRestitutionEff=dateRestitutionEff;
+		this.exemplaire=exemplaire;
 		
-		this.utilisateur=utilisateur;
-		
-	}
+		}
 	
 	
 	public void setEmp1(Exemplaire exemplaire) {
@@ -29,7 +27,6 @@ public class EmpruntEnCours {
 		exemplaire.setStatus(status.PRETE);
 		this.exemplaire=exemplaire;
 		
-		this.emp1.add(this.exemplaire);
 	}
 
 	public Date getDateEmprunt() {
@@ -52,7 +49,7 @@ public class EmpruntEnCours {
 
 	@Override
 	public String toString() {
-		return  "\n" + utilisateur+"\n" +this.emp1 +"\ndate de l'emprunt:" + dateEmprunt
+		return  "\ndate de l'emprunt:" + dateEmprunt
 				+ "\ndate de restitution effective:" + dateRestitutionEff;
 	}
 
