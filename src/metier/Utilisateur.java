@@ -1,9 +1,13 @@
 package metier;
 
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import metier.EmpruntEnCours;
 
-public class Utilisateur {
+public class Utilisateur extends Personne{
 	
 /******************************************Attributes*********************************************/
 	private int idUtilisateur;
@@ -11,11 +15,18 @@ public class Utilisateur {
 	private String pseudonyme;
 /*****************************************Constructors********************************************/
 	
-	public Utilisateur(int idUtilisateur, String pwd, String pseudonyme) {
-		super();
+	public Utilisateur (){
+		
+	}
+	
+	
+	
+	public Utilisateur(String nom, String prenom, Date dateNaissance, String sexe,int idUtilisateur, String pwd, String pseudonyme) {
+		super(nom,prenom,dateNaissance,sexe);
 		this.idUtilisateur = idUtilisateur;
 		this.pwd = pwd;
 		this.pseudonyme = pseudonyme;
+		
 	}
 /*****************************************Accesseurs***********************************************/
 	public int getIdUtilisateur() {
@@ -42,7 +53,7 @@ public class Utilisateur {
 	
 	@Override
 	public String toString() {
-		return "Utilisateur [idUtilisateur=" + idUtilisateur + "\tpwd=" + pwd + "\tpseudonyme=" + pseudonyme + "]";
+		return super.toString() + "Utilisateur [idUtilisateur=" + idUtilisateur + "\tpwd=" + pwd + "\tpseudonyme=" + pseudonyme + "]";
 	}
 	
 /**************************************************************************************************/
