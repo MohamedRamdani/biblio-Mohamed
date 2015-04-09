@@ -18,83 +18,85 @@ public class Adherent extends Utilisateur{
 	private int nbRetards;
 /*************************************************************************************************/
 
-	public boolean isConditionsPretAcceptees(){
-		
-		if (nbMaxPrets<=3)
-			return true;
-		return false;
-	}
-		
-	public int getNbRetards(){
-		
-		nbRetards=0;
-		
-		for (EmpruntEnCours eec : super.getEmpruntEncours()) {
+		public boolean isConditionsPretAcceptees(){
 			
-			GregorianCalendar aujourdhui=new GregorianCalendar();
-			
-			aujourdhui.setTime(new Date());
-			
-			aujourdhui.add(GregorianCalendar.DAY_OF_YEAR,-dureeMaxPrets);
-			
-			Date date=aujourdhui.getTime();
-			
-			if (eec.getDateEmprunt().before(date))
-			{
-				nbRetards++;
+			if (nbMaxPrets < 3 && nbRetards == 0){
+				return true;
 			}
+				
+			return false;
 		}
-	
-		return nbRetards;
+			
+		public int getNbRetards(){
+			
+			nbRetards=0;
+			
+			for (EmpruntEnCours eec : super.getEmpruntEncours()) {
+				
+				GregorianCalendar aujourdhui=new GregorianCalendar();
+				
+				aujourdhui.setTime(new Date());
+				
+				aujourdhui.add(GregorianCalendar.DAY_OF_YEAR,-dureeMaxPrets);
+				
+				Date date=aujourdhui.getTime();
+				
+				if (eec.getDateEmprunt().before(date))
+				{
+					nbRetards++;
+				}
+			}
 		
-	}
+			return nbRetards;
+			
+		}
 	
 
 /*********************************************Constructors****************************************************/
-	public Adherent (){
+		public Adherent (){
+			
+		}
 		
-	}
-	
-	
-	public Adherent(String nom, String prenom, Date dateNaissance, String sexe,String telephone,int idUtilisateur, String pwd, String pseudonyme)
-	{
 		
-		super(nom,prenom,dateNaissance,sexe,idUtilisateur,pwd,pseudonyme);
-		this.telephone=telephone;
-		
-	}
+		public Adherent(String nom, String prenom, Date dateNaissance, String sexe,String telephone,int idUtilisateur, String pwd, String pseudonyme)
+		{
+			
+			super(nom,prenom,dateNaissance,sexe,idUtilisateur,pwd,pseudonyme);
+			this.telephone=telephone;
+			
+		}
 	
 /************************************************Accesseurs************************************************/
 
-	public String getTelephone() {
-		return telephone;
-	}
-
-	public int getNbMaxPrets() {
-		return nbMaxPrets;
-	}
-
-	public int getDureeMaxPrets() {
-		return dureeMaxPrets;
-	}	
+		public String getTelephone() {
+			return telephone;
+		}
+	
+		public int getNbMaxPrets() {
+			return nbMaxPrets;
+		}
+	
+		public int getDureeMaxPrets() {
+			return dureeMaxPrets;
+		}	
 
 /*************************************************Mutators*************************************************/
 
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-	}
-
-	public void setNbMaxPrets(int nbMaxPrets) {
-		this.nbMaxPrets = nbMaxPrets;
-	}
-
-	public void setDureeMaxPrets(int dureeMaxPrets) {
-		this.dureeMaxPrets = dureeMaxPrets;
-	}
-
-	public void setNbRetards(int nbRetards) {
-		this.nbRetards = nbRetards;
-	}
+		public void setTelephone(String telephone) {
+			this.telephone = telephone;
+		}
+	
+		public void setNbMaxPrets(int nbMaxPrets) {
+			this.nbMaxPrets = nbMaxPrets;
+		}
+	
+		public void setDureeMaxPrets(int dureeMaxPrets) {
+			this.dureeMaxPrets = dureeMaxPrets;
+		}
+	
+		public void setNbRetards(int nbRetards) {
+			this.nbRetards = nbRetards;
+		}
 /***********************************************************************************************************/
 
 	@Override

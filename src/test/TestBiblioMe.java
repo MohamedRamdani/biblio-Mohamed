@@ -1,10 +1,10 @@
 package test;
 
-		import java.util.Calendar;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
-
-		import Dao.ExemplaireDao;
+import Dao.ExemplaireDao;
 import metier.Adherent;
+import metier.BiblioException;
 import metier.Employe;
 import metier.EmpruntEnCours;
 import metier.EmpruntArchive;
@@ -15,7 +15,7 @@ import metier.Utilisateur;
 		
 public class TestBiblioMe {
 		
-				public static void main(String[]args){
+				public static void main(String[]args) {
 				
 			/*	Utilisateur util1=new Utilisateur(007,"permis de tuer","James BOND");
 				System.out.println("Creation du user :"+util1);
@@ -33,6 +33,7 @@ public class TestBiblioMe {
 				System.out.println(empa);*/
 				
 				Adherent a1 = new Adherent("edf","jlde",(new GregorianCalendar(2015,Calendar.APRIL,27).getTime()),"tfs","06106525241",12,"hdsh","kshkj");
+				Adherent a2 = new Adherent("edf","jlde",(new GregorianCalendar(2015,Calendar.APRIL,27).getTime()),"tfs","06106525241",12,"hdsh","kshkj");
 				
 				
 				System.out.println("<<Adherent>>\n" + a1);
@@ -49,9 +50,41 @@ public class TestBiblioMe {
 				ExemplaireDao Dexemp=new ExemplaireDao();
 				Exemplaire exemplaire3=Dexemp.findByKey(8);
 				
-				a1.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.FEBRUARY,20).getTime(), exemplaire3);
+			
+				
+				try {
+					a1.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,4).getTime(), exemplaire3);
+					a1.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,4).getTime(), exemplaire3);
+					a1.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,4).getTime(), exemplaire3);
+					a1.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,4).getTime(), exemplaire3);
+					a1.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,4).getTime(), exemplaire3);
+					
+				} catch (BiblioException e) {
+					
+					e.printStackTrace();
+				}
+				
+				
+				try {
+				E1.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.MARCH,4).getTime(), exemplaire3);
+				E1.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,4).getTime(), exemplaire3);
+				E1.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,4).getTime(), exemplaire3);
+				E1.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,4).getTime(), exemplaire3);
+				
+				} catch (BiblioException e) {
+					
+					e.printStackTrace();
+				}
+				
+				
 				System.out.println("test :" + a1.getNbRetards());
 				System.out.println("<<Utilisateur>>\n" + a1);
+				System.out.println("Employé :" + E1);
+				
+				
+				System.out.println("conditions emprunt : " + a2.isConditionsPretAcceptees());
+		
+				
 		
 	}
 
