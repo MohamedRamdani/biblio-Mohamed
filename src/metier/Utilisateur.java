@@ -25,7 +25,6 @@ public class Utilisateur extends Personne{
 		this.idUtilisateur = idUtilisateur;
 		this.pwd = pwd;
 		this.pseudonyme = pseudonyme;
-		
 	}
 /***************************************************Accesseurs***********************************************/
 	public void setEmpruntEnCours(Date date,Exemplaire exemplaire){

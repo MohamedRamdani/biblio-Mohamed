@@ -1,6 +1,10 @@
 package metier;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
+
+import ventou.metier.SalarieException;
 
 
 
@@ -21,10 +25,17 @@ public class Adherent extends Utilisateur{
 	}
 		
 	public int getNbRetards(){
-		
+	
 		return nbRetards;
-		
 	}
+	
+	
+	   public void nbRetard throws BiblioException
+	   {
+		   if (nbRetards > 0){
+			   throw new BiblioException("il y'a un emprunt est en retard !");
+		   }
+	   }
 /*********************************************Constructors****************************************************/
 	public Adherent (){
 		
