@@ -63,7 +63,7 @@ public class Personne {
 	
 	@Override
 	public String toString() {
-		return "Personne [nom=" + nom + "\tprenom=" + prenom + "\tdateNaissance=" + dateNaissance + "\tsexe=" + sexe + "]";
+		return "Nom : " + nom + "\nPrenom : " + prenom + "\nDate de Naissance : " + dateNaissance + "\nSexe : " + sexe;
 	}
 	
 /******************************************************************************************************/

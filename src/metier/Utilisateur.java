@@ -51,7 +51,7 @@ public class Utilisateur extends Personne{
 	
 	@Override
 	public String toString() {
-		return super.toString() + "Utilisateur [idUtilisateur=" + idUtilisateur + "\tpwd=" + pwd + "\tpseudonyme=" + pseudonyme + "]";
+		return super.toString() + "idUtilisateur : " + idUtilisateur + "\nMot de passe : " + pwd + "\nPseudonyme : " + pseudonyme;
 	}
 	
 /**************************************************************************************************************/
