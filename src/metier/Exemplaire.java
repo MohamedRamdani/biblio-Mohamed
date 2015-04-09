@@ -1,5 +1,6 @@
 package metier;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Exemplaire {
@@ -9,6 +10,7 @@ public class Exemplaire {
 	private Date dateAchat;
 	private EnumStatusExemplaire status;
 	private String isbn;
+	private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
 	public Exemplaire(int idExemplaire,Date dateAchat,String isbn,EnumStatusExemplaire status) {
 		
@@ -53,7 +55,7 @@ public class Exemplaire {
 	@Override
 	public String toString() {
 		return "idExemplaire:" + idExemplaire + ", date d'achat:"
-				+ dateAchat  + ", ISBN:" + isbn+ ", status:" + status;
+				+ sdf.format(dateAchat)  + ", ISBN:" + isbn+ ", status:" + status;
 	}
 
 	

@@ -1,5 +1,6 @@
 package metier;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -9,6 +10,7 @@ public class EmpruntEnCours {
 	private Date dateRestitutionEff=null;
 	private Exemplaire exemplaire;
 	private EnumStatusExemplaire status;
+	private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 	
 
 	public EmpruntEnCours(Date dateEmprunt,Exemplaire exemplaire){
@@ -49,7 +51,7 @@ public class EmpruntEnCours {
 
 	@Override
 	public String toString() {
-		return  "date de l'emprunt:" + dateEmprunt+ " --- "+this.exemplaire+"\n";
+		return  "date de l'emprunt:" + sdf.format(dateEmprunt)+ " --- "+this.exemplaire+"\n";
 	}
 
 }

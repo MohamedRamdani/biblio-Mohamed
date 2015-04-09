@@ -9,6 +9,7 @@ import metier.Employe;
 import metier.EmpruntEnCours;
 import metier.EmpruntArchive;
 import metier.EnumcategorieEmploye;
+import metier.Exemplaire;
 import metier.Utilisateur;
 		
 		
@@ -44,7 +45,13 @@ public class TestBiblioMe {
 				
 				System.out.println("<<Employé>>\n" + E1);
 				System.out.println("<<Utilisateur>>\n" + U1);
-		
+				
+				ExemplaireDao Dexemp=new ExemplaireDao();
+				Exemplaire exemplaire3=Dexemp.findByKey(8);
+				
+				a1.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.FEBRUARY,20).getTime(), exemplaire3);
+				System.out.println("test :" + a1.getNbRetards());
+				System.out.println("<<Utilisateur>>\n" + a1);
 		
 	}
 

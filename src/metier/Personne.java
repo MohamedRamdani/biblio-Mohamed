@@ -1,5 +1,6 @@
 package metier;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Personne {
@@ -11,6 +12,7 @@ public class Personne {
 	private String prenom;
 	private Date dateNaissance;
 	private String sexe;
+	private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 	
 /*****************************************Constructors*********************************************/
 	
@@ -63,7 +65,7 @@ public class Personne {
 	
 	@Override
 	public String toString() {
-		return "Nom : " + nom + "\nPrenom : " + prenom + "\nDate de Naissance : " + dateNaissance + "\nSexe : " + sexe;
+		return "Nom : " + nom + "\nPrenom : " + prenom + "\nDate de Naissance : " + sdf.format(dateNaissance) + "\nSexe : " + sexe;
 	}
 	
 /******************************************************************************************************/

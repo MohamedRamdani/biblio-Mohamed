@@ -3,9 +3,8 @@ package metier;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-
-import ventou.metier.SalarieException;
-
+import metier.EmpruntArchive;
+import javax.swing.JSpinner.DateEditor;
 
 
 public class Adherent extends Utilisateur{
@@ -25,17 +24,19 @@ public class Adherent extends Utilisateur{
 	}
 		
 	public int getNbRetards(){
+		for (EmpruntEnCours eec : super.getEmpruntEncours()) {
+			
+		
+			
+			
+		}
 	
 		return nbRetards;
 	}
 	
 	
-	   public void nbRetard throws BiblioException
-	   {
-		   if (nbRetards > 0){
-			   throw new BiblioException("il y'a un emprunt est en retard !");
-		   }
-	   }
+
+	   
 /*********************************************Constructors****************************************************/
 	public Adherent (){
 		
