@@ -3,7 +3,9 @@ package metier;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+
 import metier.EmpruntArchive;
+
 import javax.swing.JSpinner.DateEditor;
 
 
@@ -24,10 +26,22 @@ public class Adherent extends Utilisateur{
 	}
 		
 	public int getNbRetards(){
+		
 		for (EmpruntEnCours eec : super.getEmpruntEncours()) {
 			
-		
+			GregorianCalendar aujourdhui=new GregorianCalendar();
 			
+			aujourdhui.setTime(new Date());
+			
+			aujourdhui.add(GregorianCalendar.DAY_OF_YEAR,-dureeMaxPret);
+			
+			Date date=aujourdhui.getTime();
+			
+			System.out.println("DATE: (dd/MM/yyyy)" +date);
+			
+			
+			boolean compare=dateEmpruntEffective.after(date);
+				
 			
 		}
 	
