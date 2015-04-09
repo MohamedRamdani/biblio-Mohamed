@@ -27,30 +27,29 @@ public class Adherent extends Utilisateur{
 		
 	public int getNbRetards(){
 		
+		nbRetards=0;
+		
 		for (EmpruntEnCours eec : super.getEmpruntEncours()) {
 			
 			GregorianCalendar aujourdhui=new GregorianCalendar();
 			
 			aujourdhui.setTime(new Date());
 			
-			aujourdhui.add(GregorianCalendar.DAY_OF_YEAR,-dureeMaxPret);
+			aujourdhui.add(GregorianCalendar.DAY_OF_YEAR,-dureeMaxPrets);
 			
 			Date date=aujourdhui.getTime();
 			
-			System.out.println("DATE: (dd/MM/yyyy)" +date);
-			
-			
-			boolean compare=dateEmpruntEffective.after(date);
-				
-			
+			if (eec.getDateEmprunt().before(date))
+			{
+				nbRetards++;
+			}
 		}
 	
 		return nbRetards;
+		
 	}
 	
-	
 
-	   
 /*********************************************Constructors****************************************************/
 	public Adherent (){
 		

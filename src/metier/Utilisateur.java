@@ -27,12 +27,13 @@ public class Utilisateur extends Personne{
 		this.pseudonyme = pseudonyme;
 	}
 /***************************************************Accesseurs***********************************************/
-	public void setEmpruntEnCours(Date date,Exemplaire exemplaire){
-		
-		EmpruntEnCours emp=new EmpruntEnCours(date,exemplaire);
-		EmpruntEncours.add(emp);
-		this.setNbEmpruntsEnCours();
+	
+	public int getNbRetards(){
+		return 0;
 	}
+	
+
+	
 	
 	public int getIdUtilisateur() {
 		return idUtilisateur;
@@ -54,10 +55,31 @@ public class Utilisateur extends Personne{
 		this.pseudonyme = pseudonyme;
 	}
 	
-public void setNbEmpruntsEnCours() {
+public void setNbEmpruntsEnCours() throws BiblioException{
+		
+	
 		NbEmpruntsEnCours += 1;
 	}
 
+	public void setEmpruntEnCours(Date date,Exemplaire exemplaire) throws BiblioException {
+	
+		if (this.getNbRetards()>0)
+		{
+			throw new BiblioException("Cet Adherent ne peut pas emprunter de livre.\nIl y a " + this.getNbRetards() + " livre(s) en retard pour cet Adherent");
+		}
+		
+		if (NbEmpruntsEnCours==3 && ((this.getClass().getSimpleName().compareToIgnoreCase("Adherent")) == 0))
+		{
+			throw new BiblioException ("Le nombre maximum d'emprunt (3 livres) est atteint pour cet Adherent");
+			
+		}
+		
+			EmpruntEnCours emp=new EmpruntEnCours(date,exemplaire);
+			EmpruntEncours.add(emp);
+			this.setNbEmpruntsEnCours();
+			
+			
+	}
 
 public ArrayList<EmpruntEnCours> getEmpruntEncours() {
 		return EmpruntEncours;
