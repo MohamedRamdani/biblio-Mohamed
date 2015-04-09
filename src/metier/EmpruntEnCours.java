@@ -10,14 +10,13 @@ public class EmpruntEnCours {
 	private Exemplaire exemplaire;
 	private EnumStatusExemplaire status;
 	
-	
-	
 
-	public EmpruntEnCours(Date dateEmprunt,Date dateRestitutionEff,Exemplaire exemplaire){
+	public EmpruntEnCours(Date dateEmprunt,Exemplaire exemplaire){
 
 		this.dateEmprunt=dateEmprunt;
 		this.dateRestitutionEff=dateRestitutionEff;
 		this.exemplaire=exemplaire;
+		
 		
 		}
 	
@@ -49,8 +48,7 @@ public class EmpruntEnCours {
 
 	@Override
 	public String toString() {
-		return  "\ndate de l'emprunt:" + dateEmprunt
-				+ "\ndate de restitution effective:" + dateRestitutionEff;
+		return  "date de l'emprunt:" + dateEmprunt+ " --- Exemplaire:"+this.exemplaire+"\n";
 	}
 
 }
