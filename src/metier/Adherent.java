@@ -25,7 +25,7 @@ public class Adherent extends Utilisateur{
 		return nbRetards;
 		
 	}
-/*************************************************************************************************/
+/*********************************************Constructors****************************************************/
 	public Adherent (){
 		
 	}
@@ -39,62 +39,50 @@ public class Adherent extends Utilisateur{
 		
 	}
 	
-/************************************************************************************************/
+/************************************************Accesseurs************************************************/
 
-public String getTelephone() {
-	return telephone;
-}
+	public String getTelephone() {
+		return telephone;
+	}
 
-public int getNbMaxPrets() {
-	return nbMaxPrets;
-}
+	public int getNbMaxPrets() {
+		return nbMaxPrets;
+	}
 
-public int getDureeMaxPrets() {
-	return dureeMaxPrets;
-}
+	public int getDureeMaxPrets() {
+		return dureeMaxPrets;
+	}	
 
-/***************************************************************************************************/
+/*************************************************Mutators*************************************************/
 
-public void setTelephone(String telephone) {
-	this.telephone = telephone;
-}
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
 
-public void setNbMaxPrets(int nbMaxPrets) {
-	this.nbMaxPrets = nbMaxPrets;
-}
+	public void setNbMaxPrets(int nbMaxPrets) {
+		this.nbMaxPrets = nbMaxPrets;
+	}
 
-public void setDureeMaxPrets(int dureeMaxPrets) {
-	this.dureeMaxPrets = dureeMaxPrets;
-}
+	public void setDureeMaxPrets(int dureeMaxPrets) {
+		this.dureeMaxPrets = dureeMaxPrets;
+	}
 
-public void setNbRetards(int nbRetards) {
-	this.nbRetards = nbRetards;
-}
-/*********************************************************************************************/
+	public void setNbRetards(int nbRetards) {
+		this.nbRetards = nbRetards;
+	}
+/***********************************************************************************************************/
 
-@Override
-public String toString() {
-	return super.toString() + "Adherent [telephone=" + telephone + ", nbMaxPrets=" + nbMaxPrets
+	@Override
+	public String toString() {
+		return super.toString() + "Adherent [telephone=" + telephone + ", nbMaxPrets=" + nbMaxPrets
 			+ ", dureeMaxPrets=" + dureeMaxPrets + ", nbRetards=" + nbRetards
 			+ "]";
 }
-/*********************************************************************************************/
+/************************************************************************************************************/
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 
 }

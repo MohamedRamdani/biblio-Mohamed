@@ -4,21 +4,19 @@ package metier;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-
 import metier.EmpruntEnCours;
 
 public class Utilisateur extends Personne{
 	
-/******************************************Attributes*********************************************/
+/**************************************************Attributes*********************************************/
 	private int idUtilisateur;
 	private String pwd;
 	private String pseudonyme;
-/*****************************************Constructors********************************************/
+/*************************************************Constructors********************************************/
 	
 	public Utilisateur (){
 		
 	}
-	
 	
 	
 	public Utilisateur(String nom, String prenom, Date dateNaissance, String sexe,int idUtilisateur, String pwd, String pseudonyme) {
@@ -28,7 +26,7 @@ public class Utilisateur extends Personne{
 		this.pseudonyme = pseudonyme;
 		
 	}
-/*****************************************Accesseurs***********************************************/
+/***************************************************Accesseurs***********************************************/
 	public int getIdUtilisateur() {
 		return idUtilisateur;
 	}
@@ -38,7 +36,7 @@ public class Utilisateur extends Personne{
 	public String getPseudonyme() {
 		return pseudonyme;
 	}
-/*****************************************Mutators*************************************************/
+/****************************************************Mutators*************************************************/
 	public void setIdUtilisateur(int idUtilisateur) {
 		this.idUtilisateur = idUtilisateur;
 	}
@@ -49,14 +47,14 @@ public class Utilisateur extends Personne{
 		this.pseudonyme = pseudonyme;
 	}
 	
-/***************************************************************************************************/
+/**************************************************************************************************************/
 	
 	@Override
 	public String toString() {
 		return super.toString() + "Utilisateur [idUtilisateur=" + idUtilisateur + "\tpwd=" + pwd + "\tpseudonyme=" + pseudonyme + "]";
 	}
 	
-/**************************************************************************************************/
+/**************************************************************************************************************/
 
 /*	public int getNbEmpruntEnCours() {
 		return nbEmpruntEnCours;

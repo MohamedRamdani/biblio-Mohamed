@@ -5,8 +5,10 @@ import java.util.GregorianCalendar;
 
 		import Dao.ExemplaireDao;
 import metier.Adherent;
+import metier.Employe;
 import metier.EmpruntEnCours;
 import metier.EmpruntArchive;
+import metier.EnumcategorieEmploye;
 import metier.Utilisateur;
 		
 		
@@ -37,7 +39,10 @@ public class TestBiblioMe {
 				
 				Utilisateur U1 = new Utilisateur ("edf","jlde",(new GregorianCalendar(2015,Calendar.APRIL,27).getTime()),"tfs",12,"hdsh","kshkj");
 				
-				System.out.println(U1);
+				Employe E1 = new Employe ("edf","jlde",(new GregorianCalendar(2015,Calendar.APRIL,27).getTime()),"tfs",12,"hdsh","kshkj","fsedf",EnumcategorieEmploye.BIBLIOTHECAIRE);
+				
+				
+				System.out.println("Employé : " + E1);
 					
 	}
 
