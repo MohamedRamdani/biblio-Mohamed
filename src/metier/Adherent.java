@@ -74,9 +74,8 @@ public class Adherent extends Utilisateur{
 
 	@Override
 	public String toString() {
-		return super.toString() + "Adherent [telephone=" + telephone + ", nbMaxPrets=" + nbMaxPrets
-			+ ", dureeMaxPrets=" + dureeMaxPrets + ", nbRetards=" + nbRetards
-			+ "]";
+		return super.toString() + "\nNo de Telephone : " + telephone + "\nNbre Max Prets = " + nbMaxPrets
+			+ "\nDuree Max Prets = " + dureeMaxPrets + "\nNbre Retards = " + nbRetards + "\n";
 }
 /************************************************************************************************************/
 	

@@ -14,11 +14,11 @@ public class Personne {
 	
 /*****************************************Constructors*********************************************/
 	
-	public Personne(){
+		public Personne(){
 		
-	}
+			}
 	
-	public Personne(String nom, String prenom, Date dateNaissance, String sexe){
+		public Personne(String nom, String prenom, Date dateNaissance, String sexe){
 		
 		this.nom=nom;
 		this.prenom=prenom;
