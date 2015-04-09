@@ -15,6 +15,7 @@ public class EmpruntEnCours {
 
 		this.dateEmprunt=dateEmprunt;
 		this.dateRestitutionEff=dateRestitutionEff;
+		exemplaire.setStatus(EnumStatusExemplaire.PRETE);
 		this.exemplaire=exemplaire;
 		
 		
@@ -48,7 +49,7 @@ public class EmpruntEnCours {
 
 	@Override
 	public String toString() {
-		return  "date de l'emprunt:" + dateEmprunt+ " --- Exemplaire:"+this.exemplaire+"\n";
+		return  "date de l'emprunt:" + dateEmprunt+ " --- "+this.exemplaire+"\n";
 	}
 
 }

@@ -59,6 +59,16 @@ public class TestDeBase {
 		
 		System.out.println(utilisateur2.getClass().getSimpleName()+":"+utilisateur2);
 		
+		System.out.println("\nTestAdherentEnRetard");
+		System.out.println("********************");
+		System.out.println("L'utilisateur 'Adherent' suivant à emprunter un exemplaire le 20 fevrier 2015, il est donc en retard:");
+		
+		Utilisateur utilisateur3=utilisateur.findByKey(3);
+		Exemplaire exemplaire3=Dexemp.findByKey(8); //récupération d'un exemplaire dans la DAO(id=8)
+		utilisateur3.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.FEBRUARY,20).getTime(), exemplaire3);
+		System.out.println(utilisateur3.getClass().getSimpleName()+":"+utilisateur3); // affichage d'un adhérent (id=3)
+		
+		
 	}
 
 }
