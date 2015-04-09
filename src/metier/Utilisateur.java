@@ -30,7 +30,7 @@ public class Utilisateur extends Personne{
 /***************************************************Accesseurs***********************************************/
 	public void setEmpruntEnCours(Date date,Exemplaire exemplaire){
 		
-		EmpruntEnCours emp=new EmpruntEnCours(date,exemplaire,this);
+		EmpruntEnCours emp=new EmpruntEnCours(date,exemplaire);
 		EmpruntEncours.add(emp);
 		this.setNbEmpruntsEnCours();
 	}
@@ -68,7 +68,7 @@ public ArrayList<EmpruntEnCours> getEmpruntEncours() {
 	
 	@Override
 	public String toString() {
-		return super.toString() + "idUtilisateur : " + idUtilisateur + "\nMot de passe : " + pwd + "\nPseudonyme : " + pseudonyme + "\n"+this.NbEmpruntsEnCours+" Emprunt en cours:\n"+this.EmpruntEncours+"\n";
+		return super.toString() + "idUtilisateur : " + idUtilisateur + "\nMot de passe : " + pwd + "\nPseudonyme : " + pseudonyme + "\n"+this.NbEmpruntsEnCours + "Emprunt en cours:\n" + this.EmpruntEncours+"\n";
 	}
 	
 /**************************************************************************************************************/

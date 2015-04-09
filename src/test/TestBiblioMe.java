@@ -34,16 +34,18 @@ public class TestBiblioMe {
 				Adherent a1 = new Adherent("edf","jlde",(new GregorianCalendar(2015,Calendar.APRIL,27).getTime()),"tfs","06106525241",12,"hdsh","kshkj");
 				
 				
-				System.out.println("Adherent : " + a1);
+				System.out.println("<<Adherent>>\n" + a1);
 				
 				
-				Utilisateur U1 = new Utilisateur ("edf","jlde",(new GregorianCalendar(2015,Calendar.APRIL,27).getTime()),"tfs",12,"hdsh","kshkj");
+				Utilisateur U1 = new Utilisateur ("aaa","jlde",(new GregorianCalendar(2015,Calendar.APRIL,27).getTime()),"tfs",12,"hdsh","kshkj");
 				
 				Employe E1 = new Employe ("edf","jlde",(new GregorianCalendar(2015,Calendar.APRIL,27).getTime()),"tfs",12,"hdsh","kshkj","fsedf",EnumcategorieEmploye.BIBLIOTHECAIRE);
 				
 				
-				System.out.println("Employé : " + E1);
-					
+				System.out.println("<<Employé>>\n" + E1);
+				System.out.println("<<Utilisateur>>\n" + U1);
+		
+		
 	}
 
 }
