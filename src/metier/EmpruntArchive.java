@@ -1,12 +1,17 @@
 package metier;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class EmpruntArchive {
 
 	private Date dateEmprunt;
-	private int nbEmpruntEnCours;
+	private Date dateRestitutionEff;
+	private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+	private int nbEmpruntEnCours;	
 	private Utilisateur utilisateur;
 	private Exemplaire exemplaire;
 	private static ArrayList<EmpruntEnCours> Archive=new ArrayList<EmpruntEnCours>();
@@ -21,6 +26,8 @@ public class EmpruntArchive {
 		this.utilisateur=utilisateur;
 		this.exemplaire=exemplaire;
 		Archive.add(emprunt);
+		this.dateRestitutionEff=new GregorianCalendar().getTime();
+		System.out.println(this.dateRestitutionEff);
 			
 	}
 
