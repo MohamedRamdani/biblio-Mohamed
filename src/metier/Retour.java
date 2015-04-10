@@ -4,9 +4,7 @@ import java.util.ArrayList;
 
 public class Retour {
 	
-	private EmpruntEnCours Retouremprunt;
-	
-	
+
 	public Retour(){
 		
 	}

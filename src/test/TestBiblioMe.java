@@ -34,7 +34,7 @@ public class TestBiblioMe {
 				
 				Adherent a1 = new Adherent("edf","jlde",(new GregorianCalendar(2015,Calendar.APRIL,27).getTime()),"tfs","06106525241",12,"hdsh","kshkj");
 				Adherent a2 = new Adherent("edf","jlde",(new GregorianCalendar(2015,Calendar.APRIL,27).getTime()),"tfs","06106525241",12,"hdsh","kshkj");
-				
+				Adherent a3 = new Adherent ("edf","jlde",(new GregorianCalendar(2015,Calendar.APRIL,27).getTime()),"tfs", 12,"hdsh","kshkj");
 				
 				System.out.println("<<Adherent>>\n" + a1);
 				
@@ -95,7 +95,12 @@ public class TestBiblioMe {
 				System.out.println("retard pour a2 : " + a2.getNbRetards());
 				//System.out.println("retard pour a2 : " + a2.);
 		
-				System.out.println("conditions emprunt : " + a2.isConditionsPretAcceptees());
+			
+				System.out.println("condition Adherent 2 : " + a2.isConditionsPretAcceptees());
+				System.out.println("condition Adherent 3 : " + a3.isConditionsPretAcceptees());
+				
+				System.out.println("Adherent a2 : " + a2);
+				
 		
 		
 				
