@@ -35,6 +35,22 @@ public class EmpruntEnCours {
 
 	}
 	
+	public Exemplaire getExemplaire() {
+		return exemplaire;
+	}
+
+	public void setExemplaire(Exemplaire exemplaire) {
+		this.exemplaire = exemplaire;
+	}
+
+	public EnumStatusExemplaire getStatus() {
+		return status;
+	}
+
+	public void setStatus(EnumStatusExemplaire status) {
+		this.status = status;
+	}
+
 	public ArrayList getListEmpruntEncours(){
 		
 		return emp1;

@@ -9,15 +9,18 @@ public class EmpruntArchive {
 	private int nbEmpruntEnCours;
 	private Utilisateur utilisateur;
 	private Exemplaire exemplaire;
-	ArrayList<EmpruntEnCours> enCours=new ArrayList<EmpruntEnCours>();
+	private static ArrayList<EmpruntEnCours> Archive=new ArrayList<EmpruntEnCours>();
 	
+	public EmpruntArchive() {
+		
+	}
 	
 	public EmpruntArchive(EmpruntEnCours emprunt) {
 		
 		this.dateEmprunt=dateEmprunt;
 		this.utilisateur=utilisateur;
 		this.exemplaire=exemplaire;
-		enCours.add(emprunt);
+		Archive.add(emprunt);
 			
 	}
 
@@ -39,7 +42,7 @@ public class EmpruntArchive {
 
 	@Override
 	public String toString() {
-		return "Archive des Emprunts:\n" + this.enCours;
+		return "Archive des Emprunts:\n" + this.Archive;
 	}
 
 	
