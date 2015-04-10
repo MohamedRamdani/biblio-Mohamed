@@ -1,9 +1,12 @@
 package metier;
 
+import java.lang.reflect.Constructor;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+
 import metier.EmpruntArchive;
+
 import javax.swing.JSpinner.DateEditor;
 
 
@@ -14,19 +17,41 @@ public class Adherent extends Utilisateur {
 	private int nbMaxPrets = 3;
 	private int dureeMaxPrets = 15;
 	private int nbRetards;
-/*************************************************************************************************/
-
-		public boolean isConditionsPretAcceptees(){
+	private boolean isConditionsPretAcceptees;
+/*********************************************Constructors****************************************************/
+		public Adherent (){
 			
+		}
 		
-			if (nbRetards > 0 ) {
+		// Constructeur sans No de telephone
+		public Adherent(String nom, String prenom, Date dateNaissance, String sexe,int idUtilisateur, String pwd, String pseudonyme)
+		{
+			
+			super(nom,prenom,dateNaissance,sexe,idUtilisateur,pwd,pseudonyme);
+			isConditionsPretAcceptees=false;
+		}
+		
+		
+		// Constructeur complet
+		public Adherent(String nom, String prenom, Date dateNaissance, String sexe,String telephone,int idUtilisateur, String pwd, String pseudonyme)
+		{
+			
+			super(nom,prenom,dateNaissance,sexe,idUtilisateur,pwd,pseudonyme);
+			this.telephone=telephone;
+			isConditionsPretAcceptees=true;
+		}
+		
+/**************************************************************************************************************************/
+		public boolean isConditionsPretAcceptees(){
+			if (isConditionsPretAcceptees == false){
+				System.err.println("Emprunt impossible, Il manque des informations sur l'dentité de cet Adherent");
 				return false;
 			}
-			
-			else	
+		
 			return true;
 		}
-			
+/*************************************************************************************************************************/
+		
 		public int getNbRetards(){
 			
 			nbRetards=0;
@@ -50,23 +75,7 @@ public class Adherent extends Utilisateur {
 			return nbRetards;
 			
 		}
-	
-
-/*********************************************Constructors****************************************************/
-		public Adherent (){
-			
-		}
-		
-		
-		public Adherent(String nom, String prenom, Date dateNaissance, String sexe,String telephone,int idUtilisateur, String pwd, String pseudonyme)
-		{
-			
-			super(nom,prenom,dateNaissance,sexe,idUtilisateur,pwd,pseudonyme);
-			this.telephone=telephone;
-			
-		}
-	
-/************************************************Accesseurs************************************************/
+/************************************************Accesseurs********************************************************/
 
 		public String getTelephone() {
 			return telephone;
@@ -101,9 +110,10 @@ public class Adherent extends Utilisateur {
 
 	@Override
 	public String toString() {
-		return  "\nNo de Telephone : " + telephone + "\nNbre Retards = " + nbRetards + "\n" + super.toString();
+		return  super.toString() + "\nNo de Telephone : " + telephone + "\nNbre Retards = " + nbRetards + "\n";
 }
 /************************************************************************************************************/
+
 	
 	
 	
