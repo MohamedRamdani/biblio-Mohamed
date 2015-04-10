@@ -55,10 +55,11 @@ public class Utilisateur extends Personne{
 		this.pseudonyme = pseudonyme;
 	}
 	
-public void setNbEmpruntsEnCours() throws BiblioException{
-		
-	
+public void setNbEmpruntsEnCours() {
+		NbEmpruntsEnCours=0;
+	for(EmpruntEnCours e:this.EmpruntEncours)
 		NbEmpruntsEnCours += 1;
+	
 	}
 
 	public void setEmpruntEnCours(Date date,Exemplaire exemplaire) throws BiblioException {
@@ -83,6 +84,11 @@ public void setNbEmpruntsEnCours() throws BiblioException{
 public ArrayList<EmpruntEnCours> getEmpruntEncours() {
 		return EmpruntEncours;
 	}
+
+public int getNbEmpruntsEnCours() {
+	return NbEmpruntsEnCours;
+}
+
 
 /**************************************************************************************************************/
 	

@@ -20,13 +20,15 @@ public class Retour {
 				
 				e.getExemplaire().setStatus(EnumStatusExemplaire.DISPONIBLE); // Modification du status (l'exemplaire est rendu disponible)
 				
-				listemprunt.remove(e); // l'exemplaire est supprimé de la liste des emprunt de l'utilisateur
-				empruntarch=new EmpruntArchive(e); // l'emprunt est archivé
+				listemprunt.remove(e); // l'exemplaire est supprimÃ© de la liste des emprunt de l'utilisateur
 				
+				utilisateur.setNbEmpruntsEnCours();
 				
+				empruntarch=new EmpruntArchive(e); 
+				empruntarch.setEmpruntArchive();
 			}
-		}
-		
+		}			
+				
 	}
 
 }

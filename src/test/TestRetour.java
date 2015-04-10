@@ -39,7 +39,12 @@ public class TestRetour {
 		
 		r1.retouremprunt(u6, 5); // Passage en parametre de la methode retouremprunt de l'utilisateur et de l'id de l'exemplaire
 		System.out.println("\n"+u6);
-		System.out.println(ea);
+		
+		System.out.println("\n***********************");
+		System.out.println("Archivage de l'emprunt:");
+		System.out.println("***********************");
+		System.out.println(ea.getArchive());
+		
 	}
 
 }

@@ -11,23 +11,24 @@ public class EmpruntArchive {
 	private Date dateEmprunt;
 	private Date dateRestitutionEff;
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-	private int nbEmpruntEnCours;	
-	private Utilisateur utilisateur;
 	private Exemplaire exemplaire;
-	private static ArrayList<EmpruntEnCours> Archive=new ArrayList<EmpruntEnCours>();
+	private static ArrayList<EmpruntArchive> Archive;
 	
-	public EmpruntArchive() {
+	
+	public EmpruntArchive(){
 		
 	}
 	
 	public EmpruntArchive(EmpruntEnCours emprunt) {
-		
-		this.dateEmprunt=dateEmprunt;
-		this.utilisateur=utilisateur;
-		this.exemplaire=exemplaire;
-		Archive.add(emprunt);
+		this.dateEmprunt=emprunt.getDateEmprunt();
+		this.exemplaire=emprunt.getExemplaire();
 		this.dateRestitutionEff=new GregorianCalendar().getTime();
-		System.out.println(this.dateRestitutionEff);
+	}
+	
+	public void setEmpruntArchive() {
+		
+		Archive=new ArrayList<EmpruntArchive>();
+		Archive.add(this);
 			
 	}
 
@@ -39,18 +40,20 @@ public class EmpruntArchive {
 		this.dateEmprunt = dateEmprunt;
 	}
 
-	public int getNbEmpruntEnCours() {
-		return nbEmpruntEnCours;
+	public ArrayList<EmpruntArchive> getArchive() {
+		return Archive;
 	}
 
-	public void setNbEmpruntEnCours(int nbEmpruntEnCours) {
-		this.nbEmpruntEnCours = nbEmpruntEnCours;
+	public static void setArchive(ArrayList<EmpruntArchive> archive) {
+		Archive = archive;
 	}
 
 	@Override
 	public String toString() {
-		return "Archive des Emprunts:\n" + this.Archive;
+		
+		return "Archive des Emprunts:\n"+"Date d'emprunt:"+dateEmprunt+", "+exemplaire+", Date de restitution effective:"+sdf.format(this.dateRestitutionEff)+"\n";
 	}
 
+	
 	
 }
