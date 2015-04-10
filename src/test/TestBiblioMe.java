@@ -99,6 +99,8 @@ public class TestBiblioMe {
 				System.out.println("condition Adherent 2 : " + a2.isConditionsPretAcceptees());
 				System.out.println("condition Adherent 3 : " + a3.isConditionsPretAcceptees());
 				
+				System.out.println("Adherent a2 : " + a2);
+				
 		
 		
 				
