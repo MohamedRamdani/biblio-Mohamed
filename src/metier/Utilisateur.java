@@ -2,9 +2,8 @@ package metier;
 
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
+
 
 public class Utilisateur extends Personne{
 	
@@ -14,7 +13,7 @@ public class Utilisateur extends Personne{
 	private String pseudonyme;
 	private int NbEmpruntsEnCours;
 	private ArrayList<EmpruntEnCours> EmpruntEncours=new ArrayList<EmpruntEnCours>();
-	private static EmpruntEnCours ListEmprunt;
+
 /*************************************************Constructors********************************************/
 	
 	public Utilisateur (){
@@ -79,7 +78,6 @@ public void setNbEmpruntsEnCours() throws BiblioException{
 			EmpruntEncours.add(emp);
 			this.setNbEmpruntsEnCours();
 			emp.setListEmpruntEncours(this.idUtilisateur);
-			
 		}
 
 public ArrayList<EmpruntEnCours> getEmpruntEncours() {
