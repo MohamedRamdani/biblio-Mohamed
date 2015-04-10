@@ -12,6 +12,7 @@ public class EmpruntArchive {
 	private Date dateRestitutionEff;
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 	private Exemplaire exemplaire;
+	private int idUtilisateur;
 	private static ArrayList<EmpruntArchive> Archive;
 	
 	
@@ -19,7 +20,9 @@ public class EmpruntArchive {
 		
 	}
 	
-	public EmpruntArchive(EmpruntEnCours emprunt) {
+	public EmpruntArchive(EmpruntEnCours emprunt,int idUtilisateur) {
+		
+		this.idUtilisateur=idUtilisateur;
 		this.dateEmprunt=emprunt.getDateEmprunt();
 		this.exemplaire=emprunt.getExemplaire();
 		this.dateRestitutionEff=new GregorianCalendar().getTime();
@@ -51,7 +54,7 @@ public class EmpruntArchive {
 	@Override
 	public String toString() {
 		
-		return "Archive des Emprunts:\n"+"Date d'emprunt:"+dateEmprunt+", "+exemplaire+", Date de restitution effective:"+sdf.format(this.dateRestitutionEff)+"\n";
+		return "Archive des Emprunts:\n"+"Id de l'emprunteur: "+idUtilisateur +", Date d'emprunt:"+sdf.format(dateEmprunt)+", Id de l'exemplaire:"+exemplaire.getIdExemplaire()+ ", ISBN:"+exemplaire.getIsbn() +", Date de restitution effective:"+sdf.format(this.dateRestitutionEff)+"\n";
 	}
 
 	

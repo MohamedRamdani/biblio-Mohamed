@@ -24,7 +24,7 @@ public class Retour {
 				
 				utilisateur.setNbEmpruntsEnCours();
 				
-				empruntarch=new EmpruntArchive(e); 
+				empruntarch=new EmpruntArchive(e,utilisateur.getIdUtilisateur()); 
 				empruntarch.setEmpruntArchive();
 			}
 		}			
