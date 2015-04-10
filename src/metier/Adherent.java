@@ -1,13 +1,7 @@
 package metier;
 
-import java.lang.reflect.Constructor;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-
-import metier.EmpruntArchive;
-
-import javax.swing.JSpinner.DateEditor;
 
 
 public class Adherent extends Utilisateur {

@@ -22,7 +22,7 @@ public class EmpruntEnCours {
 	public EmpruntEnCours(Date dateEmprunt,Exemplaire exemplaire){
 
 		this.dateEmprunt=dateEmprunt;
-		this.dateRestitutionEff=dateRestitutionEff;
+		this.dateRestitutionEff=null;
 		exemplaire.setStatus(EnumStatusExemplaire.PRETE);
 		this.exemplaire=exemplaire;
 		
