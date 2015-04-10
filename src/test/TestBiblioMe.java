@@ -81,8 +81,22 @@ public class TestBiblioMe {
 				System.out.println("<<Utilisateur>>\n" + a1);
 				System.out.println("Employé :" + E1);
 				
+				try {
+					a2.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.MARCH,27).getTime(), exemplaire3);
+					//a2.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,4).getTime(), exemplaire3);
+					//a2.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,4).getTime(), exemplaire3);
+					//a2.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,4).getTime(), exemplaire3);
+					//a2.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,4).getTime(), exemplaire3);
+				} catch (BiblioException e) {
 				
+					e.printStackTrace();
+				}
+				
+				System.out.println("retard pour a2 : " + a2.getNbRetards());
+				//System.out.println("retard pour a2 : " + a2.);
+		
 				System.out.println("conditions emprunt : " + a2.isConditionsPretAcceptees());
+		
 		
 				
 		

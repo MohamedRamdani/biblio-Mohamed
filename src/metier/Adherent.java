@@ -3,13 +3,11 @@ package metier;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-
 import metier.EmpruntArchive;
-
 import javax.swing.JSpinner.DateEditor;
 
 
-public class Adherent extends Utilisateur{
+public class Adherent extends Utilisateur {
 	
 /******************************************Attributes*********************************************/
 	private String telephone;
@@ -20,11 +18,13 @@ public class Adherent extends Utilisateur{
 
 		public boolean isConditionsPretAcceptees(){
 			
-			if (nbMaxPrets < 3 && nbRetards == 0){
-				return true;
+		
+			if (nbRetards > 0 ) {
+				return false;
 			}
-				
-			return false;
+			
+			else	
+			return true;
 		}
 			
 		public int getNbRetards(){
@@ -101,8 +101,7 @@ public class Adherent extends Utilisateur{
 
 	@Override
 	public String toString() {
-		return super.toString() + "\nNo de Telephone : " + telephone + "\nNbre Max Prets = " + nbMaxPrets
-			+ "\nDuree Max Prets = " + dureeMaxPrets + "\nNbre Retards = " + nbRetards + "\n";
+		return super.toString() + "\nNo de Telephone : " + telephone + "\nNbre Retards = " + nbRetards + "\n";
 }
 /************************************************************************************************************/
 	

@@ -14,9 +14,9 @@ public class EmpruntArchive {
 	
 	public EmpruntArchive(EmpruntEnCours emprunt) {
 		
-		/*this.dateEmprunt=dateEmprunt;
+		this.dateEmprunt=dateEmprunt;
 		this.utilisateur=utilisateur;
-		this.exemplaire=exemplaire;*/
+		this.exemplaire=exemplaire;
 		enCours.add(emprunt);
 			
 	}
