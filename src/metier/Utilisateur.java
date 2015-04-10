@@ -14,6 +14,7 @@ public class Utilisateur extends Personne{
 	private String pseudonyme;
 	private int NbEmpruntsEnCours;
 	private ArrayList<EmpruntEnCours> EmpruntEncours=new ArrayList<EmpruntEnCours>();
+	private static EmpruntEnCours ListEmprunt;
 /*************************************************Constructors********************************************/
 	
 	public Utilisateur (){
@@ -77,9 +78,9 @@ public void setNbEmpruntsEnCours() throws BiblioException{
 			EmpruntEnCours emp=new EmpruntEnCours(date,exemplaire);
 			EmpruntEncours.add(emp);
 			this.setNbEmpruntsEnCours();
+			emp.setListEmpruntEncours(this.idUtilisateur);
 			
-			
-	}
+		}
 
 public ArrayList<EmpruntEnCours> getEmpruntEncours() {
 		return EmpruntEncours;
@@ -89,7 +90,7 @@ public ArrayList<EmpruntEnCours> getEmpruntEncours() {
 	
 	@Override
 	public String toString() {
-		return super.toString() + "\nidUtilisateur : " + idUtilisateur + "\nMot de passe : " + pwd + "\nPseudonyme : " + pseudonyme + "\n"+this.NbEmpruntsEnCours + " Emprunt en cours:\n" + this.EmpruntEncours+"\n";
+		return "\nidUtilisateur : " + idUtilisateur + "\nMot de passe : " + pwd + "\nPseudonyme : " + pseudonyme + "\n"+this.NbEmpruntsEnCours + " Emprunt en cours:\n" + this.EmpruntEncours+"\n"+super.toString();
 	}
 	
 /**************************************************************************************************************/

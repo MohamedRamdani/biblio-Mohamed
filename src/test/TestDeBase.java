@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import metier.BiblioException;
+import metier.EmpruntEnCours;
 import metier.Exemplaire;
 import metier.Utilisateur;
 import Dao.ExemplaireDao;
@@ -18,7 +19,7 @@ public class TestDeBase {
 		UtilisateurDao utilisateur=new UtilisateurDao(); 
 		
 		
-		
+		System.out.println("\n**********************************************");
 		System.out.println("Demande de deux exemplaires par leur id aux Dao:");
 		System.out.println("************************************************");
 		
@@ -27,19 +28,21 @@ public class TestDeBase {
 		System.out.println(exemplaire1); // affichage d'un exemplaire 
 		System.out.println(exemplaire2); // affichage d'un deuxieme exemplaire 
 		
-		System.out.println("\nDemande d'un adhérent par leur id aux Dao:");
+		System.out.println("\n****************************************");
+		System.out.println("Demande d'un adhérent par leur id aux Dao:");
 		System.out.println("******************************************");
 		
 		Utilisateur utilisateur1=utilisateur.findByKey(2);
 		System.out.println(utilisateur1.getClass().getSimpleName()+":"+utilisateur1); // affichage d'un adhérent (id=2)
 		
-		
-		System.out.println("\nDemande d'un employé par leur id aux Dao:");
+		System.out.println("\n*****************************************");
+		System.out.println("Demande d'un employé par leur id aux Dao:");
 		System.out.println("*****************************************");
 		
 		Utilisateur utilisateur2=utilisateur.findByKey(5);
 		System.out.println(utilisateur2.getClass().getSimpleName()+":"+utilisateur2); // affichage d'un adhérent (id=5)
 		
+		System.out.println("\n************************************************");
 		System.out.println("\nCreation d'un emprunt en cours pour un Adherent:");
 		System.out.println("**************************************************");
 		
@@ -50,12 +53,14 @@ public class TestDeBase {
 			e2.printStackTrace();
 		}
 		
-		System.out.println("\nAffichage de l'utilisateur Adherent avec un emprunt en cours:");
+		System.out.println("\n*************************************************************");
+		System.out.println("Affichage de l'utilisateur Adherent avec un emprunt en cours:");
 		System.out.println("***************************************************************");
 		
 		System.out.println(utilisateur1.getClass().getSimpleName()+":"+utilisateur1);
 		
-		System.out.println("\nCreation d'un emprunt en cours pour un Employe:");
+		System.out.println("\n***********************************************");
+		System.out.println("Creation d'un emprunt en cours pour un Employe:");
 		System.out.println("**************************************************");
 		
 		try {
@@ -66,12 +71,14 @@ public class TestDeBase {
 			e1.printStackTrace();
 		}
 		
-		System.out.println("\nAffichage de l'utilisateur Employe avec un emprunt en cours:");
+		System.out.println("\n************************************************************");
+		System.out.println("Affichage de l'utilisateur Employe avec un emprunt en cours:");
 		System.out.println("***************************************************************");
 		
 		System.out.println(utilisateur2.getClass().getSimpleName()+":"+utilisateur2);
 		
-		System.out.println("\nTestAdherentEnRetard");
+		System.out.println("\n********************");
+		System.out.println("TestAdherentEnRetard");
 		System.out.println("********************");
 		System.out.println("L'utilisateur 'Adherent' suivant à emprunter un exemplaire le 20 Fevrier 2015,puis il tente de faire un autre Emprunt le 9 avril 2015");
 		
@@ -89,8 +96,8 @@ public class TestDeBase {
 		}
 		System.out.println(utilisateur3.getClass().getSimpleName()+":"+utilisateur3); // affichage d'un adhérent (id=3)
 		
-		
-		System.out.println("\nTestAdherentEnRetard");
+		System.out.println("\n********************");
+		System.out.println("TestAdherentEnRetard");
 		System.out.println("********************");
 		System.out.println("L'utilisateur 'Employé' suivant à emprunter un exemplaire le 21 Fevrier 2015,puis il tente de faire un autre Emprunt le 8 avril 2015");
 		
@@ -108,8 +115,9 @@ public class TestDeBase {
 		}
 		System.out.println(utilisateur3.getClass().getSimpleName()+":"+utilisateur4); // affichage d'un employe (id=6)
 		
-		System.out.println("\nTestAdherentTroisEmprunt");
-		System.out.println("********************");
+		System.out.println("\n**************************");
+		System.out.println("TestAdherentTroisEmprunt");
+		System.out.println("**************************");
 		System.out.println("L'utilisateur 'Adhérent' suivant veut emprunter 4 livres");
 		
 		Utilisateur utilisateur5=utilisateur.findByKey(4); //Demande d'un utilisateur Adherent.
@@ -128,8 +136,12 @@ public class TestDeBase {
 			
 			e.printStackTrace();
 		}
-		System.out.println(utilisateur3.getClass().getSimpleName()+":"+utilisateur5); // affichage d'un employe (id=6)
+		System.out.println(utilisateur3.getClass().getSimpleName()+":"+utilisateur5); // affichage d'un employe (id=4)
 		
+		EmpruntEnCours emp2=new EmpruntEnCours();
+		
+		System.out.println("Liste des emprunt en cours:");
+		System.out.println(emp2.getListEmpruntEncours());
 		
 	}
 

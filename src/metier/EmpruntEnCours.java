@@ -11,8 +11,14 @@ public class EmpruntEnCours {
 	private Exemplaire exemplaire;
 	private EnumStatusExemplaire status;
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+	private static ArrayList emp1=new ArrayList();
+	private int idUtilisateur;
 	
 
+	public EmpruntEnCours(){
+
+		}
+	
 	public EmpruntEnCours(Date dateEmprunt,Exemplaire exemplaire){
 
 		this.dateEmprunt=dateEmprunt;
@@ -20,17 +26,20 @@ public class EmpruntEnCours {
 		exemplaire.setStatus(EnumStatusExemplaire.PRETE);
 		this.exemplaire=exemplaire;
 		
-		
 		}
 	
+	public void setListEmpruntEncours(int idUtilisateur){
 	
-	public void setEmp1(Exemplaire exemplaire) {
-		
-		exemplaire.setStatus(status.PRETE);
-		this.exemplaire=exemplaire;
-		
-	}
+		this.idUtilisateur=idUtilisateur;
+		emp1.add(this);
 
+	}
+	
+	public ArrayList getListEmpruntEncours(){
+		
+		return emp1;
+	}
+	
 	public Date getDateEmprunt() {
 		return dateEmprunt;
 	}
@@ -51,7 +60,10 @@ public class EmpruntEnCours {
 
 	@Override
 	public String toString() {
-		return  "date de l'emprunt:" + sdf.format(dateEmprunt)+ " --- "+this.exemplaire+"\n";
+		
+	
+		return  "date de l'emprunt:" + sdf.format(dateEmprunt)+ " --- "+this.exemplaire+" --- "+"N°ID de l'utilisateur: "+idUtilisateur+"\n";
+		
 	}
 
 }
