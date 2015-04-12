@@ -13,6 +13,7 @@ public class Utilisateur extends Personne{
 	private String pseudonyme;
 	private int NbEmpruntsEnCours;
 	private ArrayList<EmpruntEnCours> EmpruntEncours=new ArrayList<EmpruntEnCours>();
+	
 
 /*************************************************Constructors********************************************/
 	
@@ -27,13 +28,13 @@ public class Utilisateur extends Personne{
 		this.pseudonyme = pseudonyme;
 	}
 /***************************************************Accesseurs***********************************************/
-	
 	public int getNbRetards(){
 		return 0;
 	}
 	
-
-	
+	public boolean isConditionsPretAcceptees(){
+		return true;
+	}
 	
 	public int getIdUtilisateur() {
 		return idUtilisateur;
@@ -44,6 +45,11 @@ public class Utilisateur extends Personne{
 	public String getPseudonyme() {
 		return pseudonyme;
 	}
+	
+	public int getNbEmpruntsEnCours() {
+		return NbEmpruntsEnCours;
+	}
+	
 /****************************************************Mutators*************************************************/
 	public void setIdUtilisateur(int idUtilisateur) {
 		this.idUtilisateur = idUtilisateur;
@@ -64,30 +70,28 @@ public void setNbEmpruntsEnCours() {
 
 	public void setEmpruntEnCours(Date date,Exemplaire exemplaire) throws BiblioException {
 	
-		if (this.getNbRetards()>0)
-		{
-			throw new BiblioException("Cet Adherent ne peut pas emprunter de livre.\nIl y a " + this.getNbRetards() + " livre(s) en retard pour cet Adherent");
-		}
-		
-		if (NbEmpruntsEnCours==3 && ((this.getClass().getSimpleName().compareToIgnoreCase("Adherent")) == 0))
-		{
-			throw new BiblioException ("Le nombre maximum d'emprunt (3 livres) est atteint pour cet Adherent");
+			if(this.isConditionsPretAcceptees()){
 			
-		}
-		
 			EmpruntEnCours emp=new EmpruntEnCours(date,exemplaire);
 			EmpruntEncours.add(emp);
 			this.setNbEmpruntsEnCours();
 			emp.setListEmpruntEncours(this.idUtilisateur);
-		}
-
+			
+			}
+			else
+			{
+				if(this.NbEmpruntsEnCours==3)
+				throw new BiblioException("Cet Adherent ne peut plus emprunter d'exemplaire.Il a déjà emprunter 3 exemplaires(s)");	
+			
+				if(this.getNbRetards()!=0)
+				throw new BiblioException("Cet Adherent ne peut pas emprunter d'exemplaire.Il a "+this.getNbRetards()+" exemplaires(s) en retard");
+			}
+	}
+	
 public ArrayList<EmpruntEnCours> getEmpruntEncours() {
 		return EmpruntEncours;
 	}
 
-public int getNbEmpruntsEnCours() {
-	return NbEmpruntsEnCours;
-}
 
 
 /**************************************************************************************************************/

@@ -13,18 +13,7 @@ public class Adherent extends Utilisateur {
 	private int nbRetards;
 	private boolean isConditionsPretAcceptees;
 /*********************************************Constructors****************************************************/
-		public Adherent (){
-			
-		}
-		
-		// Constructeur sans No de telephone
-		public Adherent(String nom, String prenom, Date dateNaissance, String sexe,int idUtilisateur, String pwd, String pseudonyme)
-		{
-			
-			super(nom,prenom,dateNaissance,sexe,idUtilisateur,pwd,pseudonyme);
-			isConditionsPretAcceptees=false;
-		}
-		
+	
 		
 		// Constructeur complet
 		public Adherent(String nom, String prenom, Date dateNaissance, String sexe,String telephone,int idUtilisateur, String pwd, String pseudonyme)
@@ -35,19 +24,29 @@ public class Adherent extends Utilisateur {
 			isConditionsPretAcceptees=true;
 		}
 		
-/**************************************************************************************************************************/
-		public boolean isConditionsPretAcceptees(){
-			if (isConditionsPretAcceptees == false){
-				System.err.println("Emprunt impossible, Il manque des informations sur l'dentité de cet Adherent");
-				return false;
+			public Adherent (){
+				
+				this("Non renseigné","Non renseigné",null,"Non renseigné","Non renseigné",0,"Non renseigné","Non renseigné");
+				isConditionsPretAcceptees=false;
 			}
 		
-			return true;
+/**
+ * @throws BiblioException ************************************************************************************************************************/
+		public boolean isConditionsPretAcceptees(){
+			
+			getNbRetards();
+			
+			if (this.nbRetards != 0 | this.getNbEmpruntsEnCours()==3){
+				isConditionsPretAcceptees=false;
+			}
+			else
+				isConditionsPretAcceptees=true;
+		
+			return this.isConditionsPretAcceptees;
 		}
 /*************************************************************************************************************************/
 		
 		public int getNbRetards(){
-			
 			nbRetards=0;
 			
 			for (EmpruntEnCours eec : super.getEmpruntEncours()) {

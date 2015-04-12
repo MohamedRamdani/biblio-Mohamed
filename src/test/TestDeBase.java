@@ -23,31 +23,31 @@ public class TestDeBase {
 		System.out.println("Demande de deux exemplaires par leur id aux Dao:");
 		System.out.println("************************************************");
 		
-		Exemplaire exemplaire1=Dexemp.findByKey(1); //récupération d'un exemplaire dans la DAO(id=3)
-		Exemplaire exemplaire2=Dexemp.findByKey(2); //récupération d'un exemplaire dans la DAO(id=7)
-		System.out.println(exemplaire1); // affichage d'un exemplaire 
-		System.out.println(exemplaire2); // affichage du deuxieme exemplaire 
+		Exemplaire ex1=Dexemp.findByKey(1); //récupération d'un exemplaire dans la DAO(id=3)
+		Exemplaire ex2=Dexemp.findByKey(2); //récupération d'un exemplaire dans la DAO(id=7)
+		System.out.println(ex1); // affichage d'un exemplaire 
+		System.out.println(ex2); // affichage du deuxieme exemplaire 
 		
 		System.out.println("\n****************************************");
 		System.out.println("Demande d'un adhérent par leur id aux Dao:");
 		System.out.println("******************************************");
 		
-		Utilisateur utilisateur1=utilisateur.findByKey(1);
-		System.out.println(utilisateur1.getClass().getSimpleName()+":"+utilisateur1); // affichage d'un adhérent (id=1)
+		Utilisateur ad1=utilisateur.findByKey(1);
+		System.out.println(ad1.getClass().getSimpleName()+":"+ad1); // affichage d'un adhérent (id=1)
 		
 		System.out.println("\n*****************************************");
 		System.out.println("Demande d'un employé par leur id aux Dao:");
 		System.out.println("*****************************************");
 		
-		Utilisateur utilisateur2=utilisateur.findByKey(4);
-		System.out.println(utilisateur2.getClass().getSimpleName()+":"+utilisateur2); // affichage d'un employé (id=4)
+		Utilisateur em2=utilisateur.findByKey(4);
+		System.out.println(em2.getClass().getSimpleName()+":"+em2); // affichage d'un employé (id=4)
 		
 		System.out.println("\n************************************************");
 		System.out.println("Creation d'un emprunt en cours pour un Adherent:");
 		System.out.println("************************************************");
 		
 		try {
-			utilisateur1.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,10).getTime(), exemplaire1);
+			ad1.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,10).getTime(), ex1);
 		} 
 		catch (BiblioException e2) {
 			e2.printStackTrace();
@@ -57,14 +57,14 @@ public class TestDeBase {
 		System.out.println("Affichage de l'utilisateur Adherent avec un emprunt en cours:");
 		System.out.println("*************************************************************");
 		
-		System.out.println(utilisateur1.getClass().getSimpleName()+":"+utilisateur1);
+		System.out.println(ad1.getClass().getSimpleName()+":"+ad1);
 		
 		System.out.println("\n***********************************************");
 		System.out.println("Creation d'un emprunt en cours pour un Employe:");
 		System.out.println("***********************************************");
 		
 		try {
-			utilisateur2.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,7).getTime(), exemplaire2);
+			em2.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,7).getTime(), ex2);
 		} 
 		catch (BiblioException e1) {
 			
@@ -75,7 +75,7 @@ public class TestDeBase {
 		System.out.println("Affichage de l'utilisateur Employe avec un emprunt en cours:");
 		System.out.println("************************************************************");
 		
-		System.out.println(utilisateur2.getClass().getSimpleName()+":"+utilisateur2);
+		System.out.println(em2.getClass().getSimpleName()+":"+em2);
 		
 		
 	}
