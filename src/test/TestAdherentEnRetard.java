@@ -33,7 +33,7 @@ public class TestAdherentEnRetard {
 			
 			e.printStackTrace();
 		}
-		System.out.println(ad1.getClass().getSimpleName()+":"+ad1); // affichage de l'adhérent (id=3)
+		System.out.println(ad1.getClass().getSimpleName()+":\n"+ad1); // affichage de l'adhérent (id=3)
 		
 		
 

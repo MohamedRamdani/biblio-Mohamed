@@ -33,14 +33,14 @@ public class TestDeBase {
 		System.out.println("******************************************");
 		
 		Utilisateur ad1=utilisateur.findByKey(1);
-		System.out.println(ad1.getClass().getSimpleName()+":"+ad1); // affichage d'un adhérent (id=1)
+		System.out.println(ad1.getClass().getSimpleName()+":\n"+ad1); // affichage d'un adhérent (id=1)
 		
 		System.out.println("\n*****************************************");
 		System.out.println("Demande d'un employé par leur id aux Dao:");
 		System.out.println("*****************************************");
 		
 		Utilisateur em2=utilisateur.findByKey(4);
-		System.out.println(em2.getClass().getSimpleName()+":"+em2); // affichage d'un employé (id=4)
+		System.out.println(em2.getClass().getSimpleName()+":\n"+em2); // affichage d'un employé (id=4)
 		
 		System.out.println("\n************************************************");
 		System.out.println("Creation d'un emprunt en cours pour un Adherent:");
@@ -57,7 +57,7 @@ public class TestDeBase {
 		System.out.println("Affichage de l'utilisateur Adherent avec un emprunt en cours:");
 		System.out.println("*************************************************************");
 		
-		System.out.println(ad1.getClass().getSimpleName()+":"+ad1);
+		System.out.println(ad1.getClass().getSimpleName()+":\n"+ad1);
 		
 		System.out.println("\n***********************************************");
 		System.out.println("Creation d'un emprunt en cours pour un Employe:");
@@ -75,7 +75,7 @@ public class TestDeBase {
 		System.out.println("Affichage de l'utilisateur Employe avec un emprunt en cours:");
 		System.out.println("************************************************************");
 		
-		System.out.println(em2.getClass().getSimpleName()+":"+em2);
+		System.out.println(em2.getClass().getSimpleName()+":\n"+em2);
 		
 		
 	}
