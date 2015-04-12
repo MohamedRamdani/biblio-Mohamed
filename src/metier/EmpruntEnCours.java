@@ -75,6 +75,12 @@ public class EmpruntEnCours {
 		}
 
 	@Override
+	protected void finalize() throws Throwable {
+		System.out.println("Emprunt en cours est Garbage collecté !!!");
+		super.finalize();
+	}
+
+	@Override
 	public String toString() {
 		
 	
