@@ -1,5 +1,6 @@
 package metier;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -12,7 +13,7 @@ public class Adherent extends Utilisateur {
 	private int dureeMaxPrets = 15;
 	private int nbRetards;
 	private boolean isConditionsPretAcceptees;
-	private boolean identite = true;
+	private boolean pbIdentite=false;
 /*********************************************Constructors****************************************************/
 	
 		
@@ -27,8 +28,8 @@ public class Adherent extends Utilisateur {
 		
 			public Adherent (){
 				
-				this("Non renseigné","Non renseigné",null,"Non renseigné","Non renseigné",0,"Non renseigné","Non renseigné");
-				identite = false;
+				this("Non renseigné","Non renseigné",new GregorianCalendar().getTime(),"Non renseigné","Non renseigné",0,"Non renseigné","Non renseigné");
+				pbIdentite = true;
 			}
 		
 /**
@@ -36,10 +37,12 @@ public class Adherent extends Utilisateur {
 		public boolean isConditionsPretAcceptees(){
 			
 			getNbRetards();
-			
-			if (this.nbRetards != 0 | this.getNbEmpruntsEnCours()==nbMaxPrets | identite){
+			System.out.println("valeur de pbidentite :" + pbIdentite);
+			if (pbIdentite | this.nbRetards != 0 | this.getNbEmpruntsEnCours()==nbMaxPrets){
 				isConditionsPretAcceptees=false;
 			}
+			
+		
 			else
 				isConditionsPretAcceptees=true;
 		

@@ -35,6 +35,7 @@ public class TestBiblioMe {
 				Adherent a1 = new Adherent("edf","jlde",(new GregorianCalendar(2015,Calendar.APRIL,27).getTime()),"tfs","06106525241",12,"hdsh","kshkj");
 				Adherent a2 = new Adherent("edf","jlde",(new GregorianCalendar(2015,Calendar.APRIL,27).getTime()),"tfs","06106525241",12,"hdsh","kshkj");
 				Adherent a3 = new Adherent ("edf","jlde",(new GregorianCalendar(2015,Calendar.APRIL,27).getTime()),"tfs",null,12,"hdsh","kshkj");
+				Adherent a4 = new Adherent ("edf","jlde",(new GregorianCalendar(2015,Calendar.APRIL,27).getTime()),"tfs",null,12,"hdsh","kshkj");
 				
 				System.out.println("<<Adherent>>\n" + a1);
 				
@@ -100,6 +101,9 @@ public class TestBiblioMe {
 				System.out.println("\ncondition Adherent 3 : " + a3.isConditionsPretAcceptees());
 				
 				System.out.println("<<Adherent a2>> \n" + a2);
+				System.out.println("\n" + a4);
+				
+				System.out.println("condition de pret pour a4 : " + a4.isConditionsPretAcceptees());
 
 	}
 
