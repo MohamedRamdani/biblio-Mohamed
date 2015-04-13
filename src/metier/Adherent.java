@@ -36,7 +36,7 @@ public class Adherent extends Utilisateur {
 			
 			getNbRetards();
 			
-			if (this.nbRetards != 0 | this.getNbEmpruntsEnCours()==3){
+			if (this.nbRetards != 0 | this.getNbEmpruntsEnCours()==nbMaxPrets){
 				isConditionsPretAcceptees=false;
 			}
 			else
