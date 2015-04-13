@@ -13,17 +13,14 @@ public class TestAdherentEnRetard {
 
 	public static void main(String[] args) {
 		
-		ExemplaireDao Dexemp=new ExemplaireDao();
-		UtilisateurDao utilisateur=new UtilisateurDao();
-		
 		System.out.println("\n********************");
 		System.out.println("TestAdherentEnRetard");
 		System.out.println("********************");
 		System.out.println("L'utilisateur 'Adherent' suivant à emprunter un exemplaire le 20 Fevrier 2015,puis il tente de faire un autre Emprunt le 9 avril 2015");
 		
-		Utilisateur ad1=utilisateur.findByKey(3);
-		Exemplaire ex1=Dexemp.findByKey(3); //récupération d'un exemplaire dans la DAO(id=3)
-		Exemplaire ex2=Dexemp.findByKey(4); //récupération d'un exemplaire dans la DAO(id=4)
+		Utilisateur ad1=UtilisateurDao.findByKey(3);
+		Exemplaire ex1=ExemplaireDao.findByKey(3); //récupération d'un exemplaire dans la DAO(id=3)
+		Exemplaire ex2=ExemplaireDao.findByKey(4); //récupération d'un exemplaire dans la DAO(id=4)
 		
 		try {
 			ad1.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.FEBRUARY,20).getTime(), ex1);

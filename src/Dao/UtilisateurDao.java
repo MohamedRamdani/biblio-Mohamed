@@ -12,7 +12,7 @@ import metier.Utilisateur;
 
 public class UtilisateurDao {
 
-	private Utilisateur [] UtilisateurDB=
+	private static Utilisateur [] UtilisateurDB=
 		{
 			new Adherent("DUPONT","Jacques",new GregorianCalendar(1990,Calendar.APRIL,27).getTime(),"Masculin","0682858584",1,"passadh","DUPJ"),
 			new Adherent("JEAN","Paul",new GregorianCalendar(2015,Calendar.MAY,27).getTime(),"Masculin","0785868559",2,"passadh","Jean paul"),
@@ -24,7 +24,7 @@ public class UtilisateurDao {
 		
 	
 	
-	public Utilisateur findByKey(int id) {
+	public static Utilisateur findByKey(int id) {
 		
 		for(Utilisateur utilisateur:UtilisateurDB)
 			if((utilisateur.getIdUtilisateur()==id)) return utilisateur;
