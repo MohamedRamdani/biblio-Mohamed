@@ -9,7 +9,7 @@ import metier.Exemplaire;
 
 public class ExemplaireDao {
 
-	private Exemplaire [] ExemplaireDB=
+	private static Exemplaire [] ExemplaireDB=
 		{
 			new Exemplaire(1,new GregorianCalendar(1990,Calendar.APRIL,27).getTime(),"isbn",EnumStatusExemplaire.DISPONIBLE),
 			new Exemplaire(2,new GregorianCalendar(1990,Calendar.MAY,5).getTime(),"isbn2",EnumStatusExemplaire.DISPONIBLE),
@@ -28,7 +28,7 @@ public class ExemplaireDao {
 		};
 	
 	
-	public Exemplaire findByKey(int id) {
+	public static Exemplaire findByKey(int id) {
 		
 		for(Exemplaire exemplaire:ExemplaireDB)
 			if((exemplaire.getIdExemplaire()==id)) return exemplaire;
