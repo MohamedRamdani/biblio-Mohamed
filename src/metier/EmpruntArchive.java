@@ -43,7 +43,7 @@ public class EmpruntArchive {
 		this.dateEmprunt = dateEmprunt;
 	}
 
-	public ArrayList<EmpruntArchive> getArchive() {
+	public static ArrayList<EmpruntArchive> getArchive() {
 		return Archive;
 	}
 
