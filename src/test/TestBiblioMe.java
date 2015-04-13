@@ -79,7 +79,7 @@ public class TestBiblioMe {
 				
 				System.out.println("test :" + a1.getNbRetards());
 				System.out.println("<<Utilisateur>>\n" + a1);
-				System.out.println("Employé :" + E1);
+				System.out.println("<<Employé e1>> \n" + E1);
 				
 				try {
 					a2.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.MARCH,27).getTime(), exemplaire3);
@@ -92,19 +92,15 @@ public class TestBiblioMe {
 					e.printStackTrace();
 				}
 				
-				System.out.println("retard pour a2 : " + a2.getNbRetards());
+				System.out.println("\nretard pour a2 : " + a2.getNbRetards());
 				//System.out.println("retard pour a2 : " + a2.);
 		
 			
-				System.out.println("condition Adherent 2 : " + a2.isConditionsPretAcceptees());
-				System.out.println("condition Adherent 3 : " + a3.isConditionsPretAcceptees());
+				System.out.println("\ncondition Adherent 2 : " + a2.isConditionsPretAcceptees());
+				System.out.println("\ncondition Adherent 3 : " + a3.isConditionsPretAcceptees());
 				
-				System.out.println("Adherent a2 : " + a2);
-				
-		
-		
-				
-		
+				System.out.println("<<Adherent a2>> \n" + a2);
+
 	}
 
 }
