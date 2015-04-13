@@ -37,7 +37,7 @@ public class TestEmployeTroisEmprunts {
 			
 			e.printStackTrace();
 		}
-		System.out.println(em1.getClass().getSimpleName()+":\n"+em1); // affichage d'un employe (id=4)
+		System.out.println(em1); // affichage d'un employe (id=6)
 		
 	}
 

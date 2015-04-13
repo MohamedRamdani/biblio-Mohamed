@@ -37,7 +37,7 @@ public class TestAdherentTroisEmprunts {
 			
 			e.printStackTrace();
 		}
-		System.out.println(ad1.getClass().getSimpleName()+":\n"+ad1); // affichage d'un employe (id=4)
+		System.out.println(ad1); // affichage d'un employe (id=4)
 
 	}
 

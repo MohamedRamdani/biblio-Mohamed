@@ -33,21 +33,21 @@ public class TestDeBase {
 		System.out.println("******************************************");
 		
 		Utilisateur ad1=utilisateur.findByKey(1);
-		System.out.println(ad1.getClass().getSimpleName()+":\n"+ad1); // affichage d'un adhérent (id=1)
+		System.out.println(ad1); // affichage d'un adhérent (id=1)
 		
 		System.out.println("\n*****************************************");
 		System.out.println("Demande d'un employé par leur id aux Dao:");
 		System.out.println("*****************************************");
 		
 		Utilisateur em2=utilisateur.findByKey(4);
-		System.out.println(em2.getClass().getSimpleName()+":\n"+em2); // affichage d'un employé (id=4)
+		System.out.println(em2); // affichage d'un employé (id=4)
 		
 		System.out.println("\n************************************************");
 		System.out.println("Creation d'un emprunt en cours pour un Adherent:");
 		System.out.println("************************************************");
 		
 		try {
-			ad1.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,10).getTime(), ex1);
+			ad1.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,10).getTime(), ex1); // Enregistrement d'un emprunt
 		} 
 		catch (BiblioException e2) {
 			e2.printStackTrace();
@@ -57,14 +57,14 @@ public class TestDeBase {
 		System.out.println("Affichage de l'utilisateur Adherent avec un emprunt en cours:");
 		System.out.println("*************************************************************");
 		
-		System.out.println(ad1.getClass().getSimpleName()+":\n"+ad1);
+		System.out.println(ad1); //Affichage adherent id=1
 		
 		System.out.println("\n***********************************************");
 		System.out.println("Creation d'un emprunt en cours pour un Employe:");
 		System.out.println("***********************************************");
 		
 		try {
-			em2.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,7).getTime(), ex2);
+			em2.setEmpruntEnCours(new GregorianCalendar(2015,Calendar.APRIL,7).getTime(), ex2); // Enregistrement d'un emprunt
 		} 
 		catch (BiblioException e1) {
 			
@@ -75,7 +75,7 @@ public class TestDeBase {
 		System.out.println("Affichage de l'utilisateur Employe avec un emprunt en cours:");
 		System.out.println("************************************************************");
 		
-		System.out.println(em2.getClass().getSimpleName()+":\n"+em2);
+		System.out.println(em2); // Affichage employé id=4
 		
 		
 	}

@@ -103,7 +103,7 @@ public class Adherent extends Utilisateur {
 
 	@Override
 	public String toString() {
-		return  super.toString() + "\nNo de Telephone : " + telephone + "\nNbre Retards = " + nbRetards + "\n";
+		return  "Adherent:\n"+super.toString() + "\nNo de Telephone : " + telephone + "\nNbre Retards = " + nbRetards + "\n";
 }
 /************************************************************************************************************/
 
