@@ -16,7 +16,6 @@ public class Utilisateur extends Personne{
 	
 
 /*************************************************Constructors********************************************/
-	
 	public Utilisateur (){
 		
 	}
