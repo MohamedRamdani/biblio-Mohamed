@@ -54,7 +54,7 @@ public class EmpruntArchive {
 	@Override
 	public String toString() {
 		
-		return "Archive des Emprunts:\n"+"Id de l'emprunteur: "+idUtilisateur +", Date d'emprunt:"+sdf.format(dateEmprunt)+", Id de l'exemplaire: "+exemplaire.getIdExemplaire()+ ", ISBN:"+exemplaire.getIsbn() +", Date de restitution effective:"+sdf.format(this.dateRestitutionEff)+"\n";
+		return "Id de l'emprunteur: "+idUtilisateur +", Date d'emprunt:"+sdf.format(dateEmprunt)+", Id de l'exemplaire: "+exemplaire.getIdExemplaire()+ ", ISBN:"+exemplaire.getIsbn() +", Date de restitution effective:"+sdf.format(this.dateRestitutionEff)+"\n";
 	}
 
 	
