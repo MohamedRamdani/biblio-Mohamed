@@ -4,12 +4,7 @@ import java.util.ArrayList;
 
 public class Retour {
 	
-
-	public Retour(){
-		
-	}
-	
-	public void retouremprunt(Utilisateur utilisateur,int idexemplaire){
+	public static void retouremprunt(Utilisateur utilisateur,int idexemplaire){
 		
 		ArrayList<EmpruntEnCours> listemprunt=utilisateur.getEmpruntEncours();
 		EmpruntArchive empruntarch;

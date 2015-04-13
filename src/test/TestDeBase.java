@@ -23,8 +23,8 @@ public class TestDeBase {
 		System.out.println("Demande de deux exemplaires par leur id aux Dao:");
 		System.out.println("************************************************");
 		
-		Exemplaire ex1=Dexemp.findByKey(1); //récupération d'un exemplaire dans la DAO(id=3)
-		Exemplaire ex2=Dexemp.findByKey(2); //récupération d'un exemplaire dans la DAO(id=7)
+		Exemplaire ex1=ExemplaireDao.findByKey(1); //récupération d'un exemplaire dans la DAO(id=3)
+		Exemplaire ex2=ExemplaireDao.findByKey(2); //récupération d'un exemplaire dans la DAO(id=7)
 		System.out.println(ex1); // affichage d'un exemplaire 
 		System.out.println(ex2); // affichage du deuxieme exemplaire 
 		
@@ -32,7 +32,7 @@ public class TestDeBase {
 		System.out.println("Demande d'un adhérent par leur id aux Dao:");
 		System.out.println("******************************************");
 		
-		Utilisateur ad1 = utilisateur.findByKey(1);
+		Utilisateur ad1 = UtilisateurDao.findByKey(1);
 		System.out.println(ad1); // affichage d'un adhérent (id=1)
 		
 		System.out.println("\n*****************************************");
