@@ -36,7 +36,16 @@ public class Employe extends Utilisateur {
 	public EnumcategorieEmploye getCategorieEmploye() {
 		return categorieEmploye;
 	}
-
+	
+/*********************************************************************************************************/
+	public int getNbRetards(){
+		return 0;
+	}
+	
+	public boolean isConditionsPretAcceptees(){
+		return true;
+	}
+	
 /*********************************************************************************************************/
 	public void setCodeMatricule(String codeMatricule) {
 		this.codeMatricule = codeMatricule;
