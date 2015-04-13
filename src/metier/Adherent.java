@@ -37,7 +37,7 @@ public class Adherent extends Utilisateur {
 		public boolean isConditionsPretAcceptees(){
 			
 			getNbRetards();
-			System.out.println("valeur de pbidentite :" + pbIdentite);
+			
 			if (pbIdentite | this.nbRetards != 0 | this.getNbEmpruntsEnCours()==nbMaxPrets){
 				isConditionsPretAcceptees=false;
 			}
@@ -107,8 +107,8 @@ public class Adherent extends Utilisateur {
 
 	@Override
 	public String toString() {
-		return  "<<ADHERENT>>\n" + super.toString() + "\nNo de Telephone : " + telephone + "\nNbre Retards = " + nbRetards + "\n";
-		//return  "<<ADHERENT>>\n" + super.toString() + "No de Telephone : " + telephone + "\nNbre Retards = " + nbRetards + "\n" + "NbEmpruntsEnCours : " + super.getNbEmpruntsEnCours() + "\n" + "Emprunt en cours : " + super.getEmpruntEncours() + "\n";
+	
+		return  "<<ADHERENT>>\n" + super.toString() + "\nNo de Telephone : " + telephone + "\nNbre Retards = " + nbRetards + "\n" + "NbEmpruntsEnCours : " + super.getNbEmpruntsEnCours() + "\n" + "Emprunt en cours : \n" + super.getEmpruntEncours() + "\n";
 }
 /************************************************************************************************************/
 

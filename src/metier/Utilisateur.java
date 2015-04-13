@@ -98,8 +98,7 @@ public ArrayList<EmpruntEnCours> getEmpruntEncours() {
 	
 	@Override
 	public String toString() {
-	return super.toString() + "\nidUtilisateur : " + idUtilisateur + "\nMot de passe : " + pwd + "\nPseudonyme : " + pseudonyme + "\nNbEmpruntsEnCours : " + this.NbEmpruntsEnCours + "\nEmprunt en cours:\n" + this.EmpruntEncours+"\n";
-		//return super.toString() + "\nidUtilisateur : " + idUtilisateur + "\nMot de passe : " + pwd + "\nPseudonyme : " + pseudonyme + "\n";
+	return super.toString() + "\nidUtilisateur : " + idUtilisateur + "\nMot de passe : " + pwd + "\nPseudonyme : " + pseudonyme;
 	}
 	
 /**************************************************************************************************************/
