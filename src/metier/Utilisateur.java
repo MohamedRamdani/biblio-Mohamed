@@ -81,10 +81,10 @@ public void setNbEmpruntsEnCours() {
 			else
 			{
 				if(this.NbEmpruntsEnCours==3)
-				throw new BiblioException("Cet Adherent ne peut plus emprunter d'exemplaire.Il a déjà emprunter 3 exemplaires(s)");	
+				throw new BiblioException("Cet Adherent ne peut plus emprunter.Il a déjà emprunter 3 exemplaires(s)");	
 			
 				if(this.getNbRetards()!=0)
-				throw new BiblioException("Cet Adherent ne peut pas emprunter d'exemplaire.Il a "+this.getNbRetards()+" exemplaires(s) en retard");
+				throw new BiblioException("Cet Adherent ne peut pas emprunter.Il a "+this.getNbRetards()+" exemplaires(s) en retard");
 			}
 	}
 	

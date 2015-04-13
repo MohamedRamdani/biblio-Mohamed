@@ -84,7 +84,7 @@ public class EmpruntEnCours {
 	public String toString() {
 		
 	
-		return  "date de l'emprunt:" + sdf.format(dateEmprunt)+ " --- "+this.exemplaire+" --- "+"N°ID de l'utilisateur: "+idUtilisateur+"\n";
+		return  "\tdate de l'emprunt:" + sdf.format(dateEmprunt)+ " --- "+this.exemplaire+"\n";
 		
 	}
 
