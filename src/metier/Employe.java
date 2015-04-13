@@ -60,7 +60,7 @@ public class Employe extends Utilisateur {
 
 	@Override
 	public String toString() {
-		return super.toString() + "Code Matricule : " + codeMatricule + "\nCategorie Employe : " + categorieEmploye;
+		return "<EMPLOYE>\n"+super.toString() + "Code Matricule : " + codeMatricule + "\nCategorie Employe : " + categorieEmploye;
 	}
 
 
