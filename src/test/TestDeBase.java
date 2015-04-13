@@ -32,7 +32,7 @@ public class TestDeBase {
 		System.out.println("Demande d'un adhérent par leur id aux Dao:");
 		System.out.println("******************************************");
 		
-		Utilisateur ad1=utilisateur.findByKey(1);
+		Utilisateur ad1 = utilisateur.findByKey(1);
 		System.out.println(ad1); // affichage d'un adhérent (id=1)
 		
 		System.out.println("\n*****************************************");
