@@ -100,12 +100,12 @@ public class TestBiblioMe {
 				System.out.println("\ncondition Adherent 2 : " + a2.isConditionsPretAcceptees());
 				System.out.println("\ncondition Adherent 3 : " + a3.isConditionsPretAcceptees());
 				
-				System.out.println("<<Adherent a2>> \n" + a2);
+				System.out.println(a2);
 				System.out.println("\n" + a4);
 				
 				System.out.println("condition de pret pour a4 : " + a4.isConditionsPretAcceptees());
 				
-				System.out.println("\nemployé e1 : " + E1);
+				System.out.println(E1);
 				
 			
 

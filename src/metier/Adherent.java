@@ -107,8 +107,8 @@ public class Adherent extends Utilisateur {
 
 	@Override
 	public String toString() {
-		//return  "Adherent : \n" + super.toString() + "\nNo de Telephone : " + telephone + "\nNbre Retards = " + nbRetards + "\n";
-		return  "<ADHERENT>\n"+super.toString() + "No de Telephone : " + telephone + "\nNbre Retards = " + nbRetards + "\n" + "NbEmpruntsEnCours : " + super.getNbEmpruntsEnCours() + "\n" + "Emprunt en cours : " + super.getEmpruntEncours() + "\n";
+		return  "<<ADHERENT>>\n" + super.toString() + "\nNo de Telephone : " + telephone + "\nNbre Retards = " + nbRetards + "\n";
+		//return  "<<ADHERENT>>\n" + super.toString() + "No de Telephone : " + telephone + "\nNbre Retards = " + nbRetards + "\n" + "NbEmpruntsEnCours : " + super.getNbEmpruntsEnCours() + "\n" + "Emprunt en cours : " + super.getEmpruntEncours() + "\n";
 }
 /************************************************************************************************************/
 
