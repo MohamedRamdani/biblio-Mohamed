@@ -12,6 +12,7 @@ public class Adherent extends Utilisateur {
 	private int dureeMaxPrets = 15;
 	private int nbRetards;
 	private boolean isConditionsPretAcceptees;
+	private boolean identite = true;
 /*********************************************Constructors****************************************************/
 	
 		
@@ -27,7 +28,7 @@ public class Adherent extends Utilisateur {
 			public Adherent (){
 				
 				this("Non renseigné","Non renseigné",null,"Non renseigné","Non renseigné",0,"Non renseigné","Non renseigné");
-				isConditionsPretAcceptees=false;
+				identite = false;
 			}
 		
 /**
@@ -36,7 +37,7 @@ public class Adherent extends Utilisateur {
 			
 			getNbRetards();
 			
-			if (this.nbRetards != 0 | this.getNbEmpruntsEnCours()==nbMaxPrets){
+			if (this.nbRetards != 0 | this.getNbEmpruntsEnCours()==nbMaxPrets | identite){
 				isConditionsPretAcceptees=false;
 			}
 			else
@@ -103,7 +104,8 @@ public class Adherent extends Utilisateur {
 
 	@Override
 	public String toString() {
-		return  "Adherent:\n"+super.toString() + "\nNo de Telephone : " + telephone + "\nNbre Retards = " + nbRetards + "\n";
+		//return  "Adherent : \n" + super.toString() + "\nNo de Telephone : " + telephone + "\nNbre Retards = " + nbRetards + "\n";
+		return  super.toString() + "No de Telephone : " + telephone + "\nNbre Retards = " + nbRetards + "\n" + "NbEmpruntsEnCours : " + super.getNbEmpruntsEnCours() + "\n" + "Emprunt en cours : " + super.getEmpruntEncours() + "\n";
 }
 /************************************************************************************************************/
 
