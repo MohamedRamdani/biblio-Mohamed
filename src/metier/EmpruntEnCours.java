@@ -44,8 +44,10 @@ public class EmpruntEnCours {
 				empruntarch.setEmpruntArchive();
 				
 				try {
+					e=null;
 					e.finalize();
-				} catch (Throwable e1) {
+				} 
+				catch (Throwable e1) {
 					e1.printStackTrace();
 				}
 			}
