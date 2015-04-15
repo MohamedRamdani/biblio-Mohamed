@@ -43,15 +43,32 @@ public class EmpruntEnCours {
 				empruntarch=new EmpruntArchive(e,utilisateur.getIdUtilisateur()); 
 				empruntarch.setEmpruntArchive();
 				
-				try {
-					e=null;
-					e.finalize();
-				} 
-				catch (Throwable e1) {
-					e1.printStackTrace();
-				}
+				e=null;
+			
 			}
 		}			
+	}
+	
+	
+	public EnumStatusExemplaire getStatus() {
+		return status;
+	}
+	
+	public ArrayList<EmpruntEnCours> getListEmpruntEncours(){
+			
+			return emp1;
+		}
+		
+	public Exemplaire getExemplaire() {
+		return exemplaire;
+	}	
+	
+	public Date getDateEmprunt() {
+		return dateEmprunt;
+	}
+
+	public int getIdUtilisateur() {
+		return idUtilisateur;
 	}
 	
 	public void setListEmpruntEncours(int idUtilisateur){
@@ -60,30 +77,16 @@ public class EmpruntEnCours {
 		emp1.add(this);
 
 	}
-	
-	public Exemplaire getExemplaire() {
-		return exemplaire;
-	}
-
-	public void setExemplaire(Exemplaire exemplaire) {
-		this.exemplaire = exemplaire;
-	}
-
-	public EnumStatusExemplaire getStatus() {
-		return status;
-	}
-
 	public void setStatus(EnumStatusExemplaire status) {
 		this.status = status;
 	}
 
-	public ArrayList getListEmpruntEncours(){
-		
-		return emp1;
-	}
+	public void setExemplaire(Exemplaire exemplaire) {
+			this.exemplaire = exemplaire;
+		}
 	
-	public Date getDateEmprunt() {
-		return dateEmprunt;
+	public void setIdUtilisateur(int idUtilisateur) {
+		this.idUtilisateur = idUtilisateur;
 	}
 
 	public Date getDateRestitutionEff() {
@@ -99,12 +102,6 @@ public class EmpruntEnCours {
 	public void setDateRestitutionEff(Date dateRestitutionEff) {
 			this.dateRestitutionEff = dateRestitutionEff;
 		}
-
-	@Override
-	protected void finalize() throws Throwable {
-		System.out.println("Emprunt en cours est Garbage collecté !!!");
-		super.finalize();
-	}
 
 	@Override
 	public String toString() {
