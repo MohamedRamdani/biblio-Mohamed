@@ -43,7 +43,7 @@ public class EmpruntEnCours {
 				empruntarch=new EmpruntArchive(e,utilisateur.getIdUtilisateur()); 
 				empruntarch.setEmpruntArchive();
 				
-				e=null;
+				e=null; // Emprunt en cours est Garbage collecté;
 			
 			}
 		}			
