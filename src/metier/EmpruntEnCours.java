@@ -11,9 +11,9 @@ public class EmpruntEnCours {
 	private Exemplaire exemplaire;
 	private EnumStatusExemplaire status;
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-	private static ArrayList emp1=new ArrayList();
+	private static ArrayList<EmpruntEnCours> emp1=new ArrayList<EmpruntEnCours>();
 	private int idUtilisateur;
-	
+	EmpruntArchive empruntarch;
 
 	public EmpruntEnCours(){
 
@@ -27,6 +27,30 @@ public class EmpruntEnCours {
 		this.exemplaire=exemplaire;
 		
 		}
+	
+	public void setRetourEmprunt(Utilisateur utilisateur,int idExemplaire){
+		
+		for(EmpruntEnCours e:utilisateur.getEmpruntEncours())
+		{
+			if(e.getExemplaire().getIdExemplaire()==idExemplaire){
+				
+				e.getExemplaire().setStatus(EnumStatusExemplaire.DISPONIBLE); // Modification du status (l'exemplaire est rendu disponible)
+					
+					
+				utilisateur.getEmpruntEncours().remove(e); // l'exemplaire est supprimÃ© de la liste des emprunt de l'utilisateur
+				utilisateur.setNbEmpruntsEnCours();
+				
+				empruntarch=new EmpruntArchive(e,utilisateur.getIdUtilisateur()); 
+				empruntarch.setEmpruntArchive();
+				
+				try {
+					e.finalize();
+				} catch (Throwable e1) {
+					e1.printStackTrace();
+				}
+			}
+		}			
+	}
 	
 	public void setListEmpruntEncours(int idUtilisateur){
 	

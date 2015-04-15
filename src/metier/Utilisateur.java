@@ -67,6 +67,13 @@ public void setNbEmpruntsEnCours() {
 	
 	}
 
+public void setRetourEmprunt(int idExemplaire){
+	
+	EmpruntEnCours emp2=new EmpruntEnCours();
+	emp2.setRetourEmprunt(this, idExemplaire);
+	
+}
+
 	public void setEmpruntEnCours(Date date,Exemplaire exemplaire) throws BiblioException {
 	
 			if(this.isConditionsPretAcceptees()){
